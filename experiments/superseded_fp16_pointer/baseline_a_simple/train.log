@@ -1,0 +1,119 @@
+2026-09-29 22:19:34 | INFO | training 8280 examples, 247 optimizer steps/epoch, 4940 total steps, amp=True
+2026-09-29 22:19:51 | INFO | epoch 0 step 50/4940 loss 45.262 step_acc 0.644 gnorm 10.64 lr 1.86e-04
+2026-09-29 22:20:06 | INFO | epoch 0 step 100/4940 loss 37.968 step_acc 0.700 gnorm 33.63 lr 3.85e-04
+2026-09-29 22:20:21 | INFO | epoch 0 step 150/4940 loss 35.440 step_acc 0.720 gnorm 14.91 lr 5.87e-04
+2026-09-29 22:20:37 | INFO | epoch 0 step 200/4940 loss 34.291 step_acc 0.732 gnorm 7.56 lr 7.89e-04
+2026-09-29 22:20:57 | INFO | epoch summary {"epoch": 1, "train_loss": 32.9432, "train_step_acc": 0.7425, "epoch_seconds": 83.6708, "lr": 0.001, "train_seconds_cum": 83.7}
+2026-09-29 22:20:59 | INFO | epoch 1 step 250/4940 loss 18.225 step_acc 0.725 gnorm 24.25 lr 9.84e-04
+2026-09-29 22:21:22 | INFO | epoch 1 step 300/4940 loss 26.142 step_acc 0.786 gnorm 14.93 lr 9.91e-04
+2026-09-29 22:21:43 | INFO | epoch 1 step 350/4940 loss inf step_acc 0.786 gnorm 9.57 lr 9.80e-04
+2026-09-29 22:22:05 | INFO | epoch 1 step 400/4940 loss inf step_acc 0.791 gnorm 7.73 lr 9.69e-04
+2026-09-29 22:22:27 | INFO | epoch 1 step 450/4940 loss inf step_acc 0.798 gnorm 12.27 lr 9.59e-04
+2026-09-29 22:22:49 | INFO | epoch 1 step 500/4940 loss inf step_acc 0.803 gnorm 10.80 lr 9.48e-04
+2026-09-29 22:22:50 | INFO | epoch summary {"epoch": 2, "train_loss": Infinity, "train_step_acc": 0.8033, "epoch_seconds": 111.4398, "lr": 0.0009, "train_seconds_cum": 195.1}
+2026-09-29 22:23:11 | INFO | epoch 2 step 550/4940 loss 19.133 step_acc 0.837 gnorm 6.71 lr 9.38e-04
+2026-09-29 22:23:33 | INFO | epoch 2 step 600/4940 loss 18.977 step_acc 0.842 gnorm 18.92 lr 9.28e-04
+2026-09-29 22:23:54 | INFO | epoch 2 step 650/4940 loss 17.359 step_acc 0.848 gnorm 5.03 lr 9.17e-04
+2026-09-29 22:24:17 | INFO | epoch 2 step 700/4940 loss 17.922 step_acc 0.850 gnorm 6.61 lr 9.06e-04
+2026-09-29 22:24:39 | INFO | epoch 2 step 750/4940 loss 17.765 step_acc 0.851 gnorm 6.70 lr 8.96e-04
+2026-09-29 22:24:50 | INFO | epoch summary {"epoch": 3, "train_loss": 17.8912, "train_step_acc": 0.8514, "epoch_seconds": 110.2682, "val_loss": 13.8463, "val_em": 0.0396, "val_ex": 0.0554, "val_grammar_valid": 1.0, "val_exec_valid": 0.248, "val_decode_seconds": 5.595, "lr": 0.0009, "train_seconds_cum": 305.4}
+2026-09-29 22:25:10 | INFO | epoch 3 step 800/4940 loss 14.258 step_acc 0.875 gnorm 10.62 lr 8.85e-04
+2026-09-29 22:25:33 | INFO | epoch 3 step 850/4940 loss 15.696 step_acc 0.871 gnorm 7.90 lr 8.75e-04
+2026-09-29 22:25:54 | INFO | epoch 3 step 900/4940 loss 14.774 step_acc 0.874 gnorm 3.65 lr 8.64e-04
+2026-09-29 22:26:14 | INFO | epoch 3 step 950/4940 loss 15.401 step_acc 0.875 gnorm 5.62 lr 8.54e-04
+2026-09-29 22:26:27 | INFO | epoch 3 step 1000/4940 loss 14.487 step_acc 0.879 gnorm 3.61 lr 8.43e-04
+2026-09-29 22:26:28 | INFO | epoch summary {"epoch": 4, "train_loss": 14.3954, "train_step_acc": 0.8795, "epoch_seconds": 96.5904, "lr": 0.0008, "train_seconds_cum": 402.0}
+2026-09-29 22:26:49 | INFO | epoch 4 step 1050/4940 loss 11.404 step_acc 0.899 gnorm 3.90 lr 8.32e-04
+2026-09-29 22:27:10 | INFO | epoch 4 step 1100/4940 loss 11.572 step_acc 0.898 gnorm 1.72 lr 8.22e-04
+2026-09-29 22:27:33 | INFO | epoch 4 step 1150/4940 loss 12.061 step_acc 0.896 gnorm 7.19 lr 8.11e-04
+2026-09-29 22:27:54 | INFO | epoch 4 step 1200/4940 loss 11.700 step_acc 0.898 gnorm 7.46 lr 8.01e-04
+2026-09-29 22:28:18 | INFO | epoch 4 step 1250/4940 loss 12.062 step_acc 0.898 gnorm 3.83 lr 7.90e-04
+2026-09-29 22:28:21 | INFO | epoch summary {"epoch": 5, "train_loss": 12.3134, "train_step_acc": 0.897, "epoch_seconds": 111.7937, "lr": 0.0008, "train_seconds_cum": 513.8}
+2026-09-29 22:28:43 | INFO | epoch 5 step 1300/4940 loss 13.659 step_acc 0.901 gnorm 6.35 lr 7.79e-04
+2026-09-29 22:29:05 | INFO | epoch 5 step 1350/4940 loss 11.525 step_acc 0.907 gnorm 11.13 lr 7.69e-04
+2026-09-29 22:29:27 | INFO | epoch 5 step 1400/4940 loss 11.254 step_acc 0.907 gnorm 5.58 lr 7.58e-04
+2026-09-29 22:29:41 | INFO | epoch 5 step 1450/4940 loss 10.504 step_acc 0.910 gnorm 6.09 lr 7.47e-04
+2026-09-29 22:29:55 | INFO | epoch 5 step 1500/4940 loss 10.598 step_acc 0.910 gnorm 3.72 lr 7.37e-04
+2026-09-29 22:30:08 | INFO | epoch summary {"epoch": 6, "train_loss": 10.5729, "train_step_acc": 0.9103, "epoch_seconds": 94.0751, "val_loss": 11.8281, "val_em": 0.1451, "val_ex": 0.1504, "val_grammar_valid": 1.0, "val_exec_valid": 0.343, "val_decode_seconds": 5.6905, "lr": 0.0007, "train_seconds_cum": 607.8}
+2026-09-29 22:30:34 | INFO | epoch 6 step 1550/4940 loss 10.148 step_acc 0.914 gnorm 8.31 lr 7.26e-04
+2026-09-29 22:30:55 | INFO | epoch 6 step 1600/4940 loss 8.667 step_acc 0.920 gnorm 5.96 lr 7.15e-04
+2026-09-29 22:31:18 | INFO | epoch 6 step 1650/4940 loss 9.072 step_acc 0.919 gnorm 12.40 lr 7.05e-04
+2026-09-29 22:31:40 | INFO | epoch 6 step 1700/4940 loss 9.019 step_acc 0.919 gnorm 7.57 lr 6.94e-04
+2026-09-29 22:32:04 | INFO | epoch 6 step 1750/4940 loss 9.146 step_acc 0.919 gnorm 3.76 lr 6.83e-04
+2026-09-29 22:32:08 | INFO | epoch summary {"epoch": 7, "train_loss": 9.5185, "train_step_acc": 0.9177, "epoch_seconds": 119.5366, "lr": 0.0007, "train_seconds_cum": 727.4}
+2026-09-29 22:32:29 | INFO | epoch 7 step 1800/4940 loss 7.515 step_acc 0.929 gnorm 20.55 lr 6.73e-04
+2026-09-29 22:32:50 | INFO | epoch 7 step 1850/4940 loss 7.766 step_acc 0.929 gnorm 8.77 lr 6.62e-04
+2026-09-29 22:33:12 | INFO | epoch 7 step 1900/4940 loss 8.221 step_acc 0.927 gnorm 10.77 lr 6.51e-04
+2026-09-29 22:33:35 | INFO | epoch 7 step 1950/4940 loss 8.182 step_acc 0.927 gnorm 3.53 lr 6.41e-04
+2026-09-29 22:33:58 | INFO | epoch 7 step 2000/4940 loss 8.572 step_acc 0.925 gnorm 9.08 lr 6.30e-04
+2026-09-29 22:34:01 | INFO | epoch summary {"epoch": 8, "train_loss": 8.4931, "train_step_acc": 0.9254, "epoch_seconds": 111.8747, "lr": 0.0006, "train_seconds_cum": 839.3}
+2026-09-29 22:34:20 | INFO | epoch 8 step 2050/4940 loss 6.623 step_acc 0.935 gnorm 3.88 lr 6.19e-04
+2026-09-29 22:34:42 | INFO | epoch 8 step 2100/4940 loss 8.082 step_acc 0.929 gnorm 7.17 lr 6.09e-04
+2026-09-29 22:35:06 | INFO | epoch 8 step 2150/4940 loss 8.410 step_acc 0.927 gnorm 2.02 lr 5.98e-04
+2026-09-29 22:35:29 | INFO | epoch 8 step 2200/4940 loss 7.993 step_acc 0.930 gnorm 8.85 lr 5.87e-04
+2026-09-29 22:35:50 | INFO | epoch 8 step 2250/4940 loss 7.812 step_acc 0.930 gnorm 6.02 lr 5.77e-04
+2026-09-29 22:36:05 | INFO | epoch summary {"epoch": 9, "train_loss": 7.7168, "train_step_acc": 0.9304, "epoch_seconds": 115.2023, "val_loss": 12.6387, "val_em": 0.1741, "val_ex": 0.1636, "val_grammar_valid": 1.0, "val_exec_valid": 0.3799, "val_decode_seconds": 5.8932, "lr": 0.0006, "train_seconds_cum": 954.5}
+2026-09-29 22:36:22 | INFO | epoch 9 step 2300/4940 loss 8.907 step_acc 0.928 gnorm 12.28 lr 5.66e-04
+2026-09-29 22:36:45 | INFO | epoch 9 step 2350/4940 loss 7.159 step_acc 0.935 gnorm 12.06 lr 5.56e-04
+2026-09-29 22:37:07 | INFO | epoch 9 step 2400/4940 loss 7.098 step_acc 0.935 gnorm 10.37 lr 5.45e-04
+2026-09-29 22:37:29 | INFO | epoch 9 step 2450/4940 loss 7.542 step_acc 0.933 gnorm 7.46 lr 5.34e-04
+2026-09-29 22:37:42 | INFO | epoch 9 step 2500/4940 loss 7.025 step_acc 0.935 gnorm 11.82 lr 5.24e-04
+2026-09-29 22:37:46 | INFO | epoch summary {"epoch": 10, "train_loss": 7.0651, "train_step_acc": 0.9354, "epoch_seconds": 100.7703, "lr": 0.0005, "train_seconds_cum": 1055.2}
+2026-09-29 22:37:56 | INFO | epoch 10 step 2550/4940 loss 5.366 step_acc 0.945 gnorm 9.36 lr 5.13e-04
+2026-09-29 22:38:12 | INFO | epoch 10 step 2600/4940 loss 6.661 step_acc 0.938 gnorm 7.51 lr 5.02e-04
+2026-09-29 22:38:30 | INFO | epoch 10 step 2650/4940 loss 6.595 step_acc 0.939 gnorm 3.25 lr 4.92e-04
+2026-09-29 22:38:45 | INFO | epoch 10 step 2700/4940 loss 6.590 step_acc 0.938 gnorm 1.65 lr 4.81e-04
+2026-09-29 22:38:59 | INFO | epoch 10 step 2750/4940 loss 6.548 step_acc 0.939 gnorm 5.95 lr 4.70e-04
+2026-09-29 22:39:04 | INFO | epoch summary {"epoch": 11, "train_loss": 6.5447, "train_step_acc": 0.939, "epoch_seconds": 76.6428, "lr": 0.0005, "train_seconds_cum": 1131.9}
+2026-09-29 22:39:15 | INFO | epoch 11 step 2800/4940 loss 6.046 step_acc 0.942 gnorm 15.25 lr 4.60e-04
+2026-09-29 22:39:30 | INFO | epoch 11 step 2850/4940 loss 5.621 step_acc 0.943 gnorm 1.70 lr 4.49e-04
+2026-09-29 22:39:44 | INFO | epoch 11 step 2900/4940 loss 5.187 step_acc 0.946 gnorm 11.92 lr 4.38e-04
+2026-09-29 22:39:59 | INFO | epoch 11 step 2950/4940 loss 5.992 step_acc 0.942 gnorm 14.10 lr 4.28e-04
+2026-09-29 22:40:15 | INFO | epoch 11 step 3000/4940 loss 6.313 step_acc 0.941 gnorm 3.45 lr 4.17e-04
+2026-09-29 22:40:27 | INFO | epoch summary {"epoch": 12, "train_loss": 6.1511, "train_step_acc": 0.9417, "epoch_seconds": 75.1376, "val_loss": 13.3052, "val_em": 0.1583, "val_ex": 0.1583, "val_grammar_valid": 1.0, "val_exec_valid": 0.3404, "val_decode_seconds": 4.8118, "lr": 0.0004, "train_seconds_cum": 1207.0}
+2026-09-29 22:40:40 | INFO | epoch 12 step 3050/4940 loss 5.555 step_acc 0.944 gnorm 3.61 lr 4.06e-04
+2026-09-29 22:41:01 | INFO | epoch 12 step 3100/4940 loss 5.659 step_acc 0.944 gnorm 3.20 lr 3.96e-04
+2026-09-29 22:41:23 | INFO | epoch 12 step 3150/4940 loss 5.507 step_acc 0.945 gnorm 9.29 lr 3.85e-04
+2026-09-29 22:41:45 | INFO | epoch 12 step 3200/4940 loss 5.583 step_acc 0.945 gnorm 5.17 lr 3.74e-04
+2026-09-29 22:42:10 | INFO | epoch 12 step 3250/4940 loss 5.964 step_acc 0.943 gnorm 9.57 lr 3.64e-04
+2026-09-29 22:42:17 | INFO | epoch summary {"epoch": 13, "train_loss": 5.7826, "train_step_acc": 0.9443, "epoch_seconds": 109.6672, "lr": 0.0004, "train_seconds_cum": 1316.7}
+2026-09-29 22:42:33 | INFO | epoch 13 step 3300/4940 loss 4.810 step_acc 0.952 gnorm 4.71 lr 3.53e-04
+2026-09-29 22:42:54 | INFO | epoch 13 step 3350/4940 loss 4.905 step_acc 0.950 gnorm 3.90 lr 3.42e-04
+2026-09-29 22:43:15 | INFO | epoch 13 step 3400/4940 loss 5.575 step_acc 0.946 gnorm 7.53 lr 3.32e-04
+2026-09-29 22:43:28 | INFO | epoch 13 step 3450/4940 loss 5.436 step_acc 0.947 gnorm 1.91 lr 3.21e-04
+2026-09-29 22:43:41 | INFO | epoch 13 step 3500/4940 loss 5.455 step_acc 0.947 gnorm 11.65 lr 3.10e-04
+2026-09-29 22:43:45 | INFO | epoch summary {"epoch": 14, "train_loss": 5.497, "train_step_acc": 0.9466, "epoch_seconds": 86.8123, "lr": 0.0003, "train_seconds_cum": 1403.5}
+2026-09-29 22:43:56 | INFO | epoch 14 step 3550/4940 loss 3.976 step_acc 0.956 gnorm 4.35 lr 3.00e-04
+2026-09-29 22:44:13 | INFO | epoch 14 step 3600/4940 loss 4.934 step_acc 0.951 gnorm 2.25 lr 2.89e-04
+2026-09-29 22:44:27 | INFO | epoch 14 step 3650/4940 loss 5.324 step_acc 0.949 gnorm 3.40 lr 2.78e-04
+2026-09-29 22:44:44 | INFO | epoch 14 step 3700/4940 loss 5.015 step_acc 0.950 gnorm 6.95 lr 2.68e-04
+2026-09-29 22:45:07 | INFO | epoch 14 step 3750/4940 loss 5.261 step_acc 0.949 gnorm 3.71 lr 2.57e-04
+2026-09-29 22:45:21 | INFO | epoch summary {"epoch": 15, "train_loss": 5.2143, "train_step_acc": 0.9486, "epoch_seconds": 85.7501, "val_loss": Infinity, "val_em": 0.1821, "val_ex": 0.1609, "val_grammar_valid": 1.0, "val_exec_valid": 0.3641, "val_decode_seconds": 6.6296, "lr": 0.0003, "train_seconds_cum": 1489.3}
+2026-09-29 22:45:40 | INFO | epoch 15 step 3800/4940 loss 6.220 step_acc 0.943 gnorm 8.94 lr 2.47e-04
+2026-09-29 22:46:02 | INFO | epoch 15 step 3850/4940 loss 5.193 step_acc 0.949 gnorm 7.59 lr 2.36e-04
+2026-09-29 22:46:24 | INFO | epoch 15 step 3900/4940 loss 5.537 step_acc 0.948 gnorm 2.18 lr 2.25e-04
+2026-09-29 22:46:45 | INFO | epoch 15 step 3950/4940 loss 5.361 step_acc 0.949 gnorm 12.60 lr 2.15e-04
+2026-09-29 22:47:06 | INFO | epoch 15 step 4000/4940 loss 5.166 step_acc 0.949 gnorm 13.08 lr 2.04e-04
+2026-09-29 22:47:13 | INFO | epoch summary {"epoch": 16, "train_loss": 5.0006, "train_step_acc": 0.9501, "epoch_seconds": 110.1327, "lr": 0.0002, "train_seconds_cum": 1599.4}
+2026-09-29 22:47:28 | INFO | epoch 16 step 4050/4940 loss 5.352 step_acc 0.949 gnorm 6.16 lr 1.93e-04
+2026-09-29 22:47:51 | INFO | epoch 16 step 4100/4940 loss 5.302 step_acc 0.949 gnorm 5.89 lr 1.83e-04
+2026-09-29 22:48:12 | INFO | epoch 16 step 4150/4940 loss 4.865 step_acc 0.951 gnorm 3.24 lr 1.72e-04
+2026-09-29 22:48:30 | INFO | epoch 16 step 4200/4940 loss 4.847 step_acc 0.951 gnorm 7.90 lr 1.62e-04
+2026-09-29 22:48:44 | INFO | epoch 16 step 4250/4940 loss 4.847 step_acc 0.951 gnorm 0.89 lr 1.51e-04
+2026-09-29 22:48:49 | INFO | epoch summary {"epoch": 17, "train_loss": 4.774, "train_step_acc": 0.9517, "epoch_seconds": 95.911, "lr": 0.0001, "train_seconds_cum": 1695.3}
+2026-09-29 22:49:04 | INFO | epoch 17 step 4300/4940 loss 5.407 step_acc 0.949 gnorm 1.00 lr 1.40e-04
+2026-09-29 22:49:27 | INFO | epoch 17 step 4350/4940 loss 5.525 step_acc 0.948 gnorm 10.42 lr 1.30e-04
+2026-09-29 22:49:48 | INFO | epoch 17 step 4400/4940 loss 5.151 step_acc 0.950 gnorm 7.99 lr 1.19e-04
+2026-09-29 22:50:08 | INFO | epoch 17 step 4450/4940 loss 4.637 step_acc 0.953 gnorm 10.53 lr 1.08e-04
+2026-09-29 22:50:31 | INFO | epoch 17 step 4500/4940 loss 4.775 step_acc 0.952 gnorm 6.51 lr 9.76e-05
+2026-09-29 22:50:47 | INFO | epoch summary {"epoch": 18, "train_loss": 4.6233, "train_step_acc": 0.9526, "epoch_seconds": 106.8816, "val_loss": Infinity, "val_em": 0.1847, "val_ex": 0.1636, "val_grammar_valid": 1.0, "val_exec_valid": 0.3298, "val_decode_seconds": 6.4941, "lr": 0.0001, "train_seconds_cum": 1802.2}
+2026-09-29 22:51:03 | INFO | epoch 18 step 4550/4940 loss 4.680 step_acc 0.952 gnorm 4.91 lr 8.72e-05
+2026-09-29 22:51:23 | INFO | epoch 18 step 4600/4940 loss 4.671 step_acc 0.952 gnorm 4.73 lr 7.65e-05
+2026-09-29 22:51:44 | INFO | epoch 18 step 4650/4940 loss 4.437 step_acc 0.953 gnorm 5.02 lr 6.58e-05
+2026-09-29 22:52:05 | INFO | epoch 18 step 4700/4940 loss 4.328 step_acc 0.954 gnorm 7.75 lr 5.52e-05
+2026-09-29 22:52:27 | INFO | epoch 18 step 4750/4940 loss 4.519 step_acc 0.953 gnorm 7.15 lr 4.45e-05
+2026-09-29 22:52:34 | INFO | epoch summary {"epoch": 19, "train_loss": 4.4918, "train_step_acc": 0.9534, "epoch_seconds": 105.8682, "lr": 0.0, "train_seconds_cum": 1908.1}
+2026-09-29 22:52:49 | INFO | epoch 19 step 4800/4940 loss 5.250 step_acc 0.950 gnorm 2.07 lr 3.39e-05
+2026-09-29 22:53:10 | INFO | epoch 19 step 4850/4940 loss 4.426 step_acc 0.954 gnorm 2.32 lr 2.32e-05
+2026-09-29 22:53:33 | INFO | epoch 19 step 4900/4940 loss 4.544 step_acc 0.953 gnorm 5.47 lr 1.26e-05
+2026-09-29 22:54:00 | INFO | epoch summary {"epoch": 20, "train_loss": 4.6257, "train_step_acc": 0.953, "epoch_seconds": 75.7511, "val_loss": Infinity, "val_em": 0.1926, "val_ex": 0.1583, "val_grammar_valid": 1.0, "val_exec_valid": 0.3325, "val_decode_seconds": 7.1854, "lr": 0.0, "train_seconds_cum": 1983.8}

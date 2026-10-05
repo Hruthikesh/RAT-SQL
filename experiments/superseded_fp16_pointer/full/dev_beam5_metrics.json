@@ -1,0 +1,98 @@
+{
+  "n": 1034,
+  "exact_match": 0.6161,
+  "grammar_validity": 1.0,
+  "parse_validity": 1.0,
+  "execution_accuracy": 0.6306,
+  "sql_validity": 0.9072,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 248,
+      "exact_match": 0.8226,
+      "execution_accuracy": 0.8347
+    },
+    "medium": {
+      "n": 446,
+      "exact_match": 0.6345,
+      "execution_accuracy": 0.6749
+    },
+    "hard": {
+      "n": 174,
+      "exact_match": 0.4885,
+      "execution_accuracy": 0.4713
+    },
+    "extra": {
+      "n": 166,
+      "exact_match": 0.3916,
+      "execution_accuracy": 0.3735
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.8375,
+      "rec": 0.8375,
+      "f1": 0.8375
+    },
+    "select(no AGG)": {
+      "acc": 0.8598,
+      "rec": 0.8598,
+      "f1": 0.8598
+    },
+    "where": {
+      "acc": 0.7594,
+      "rec": 0.7594,
+      "f1": 0.7594
+    },
+    "where(no OP)": {
+      "acc": 0.8075,
+      "rec": 0.8075,
+      "f1": 0.8075
+    },
+    "group(no Having)": {
+      "acc": 0.797,
+      "rec": 0.7823,
+      "f1": 0.7896
+    },
+    "group": {
+      "acc": 0.7406,
+      "rec": 0.7269,
+      "f1": 0.7337
+    },
+    "order": {
+      "acc": 0.8109,
+      "rec": 0.8355,
+      "f1": 0.823
+    },
+    "and/or": {
+      "acc": 0.9686,
+      "rec": 0.9791,
+      "f1": 0.9738
+    },
+    "IUEN": {
+      "acc": 0.4211,
+      "rec": 0.4211,
+      "f1": 0.4211
+    },
+    "keywords": {
+      "acc": 0.8606,
+      "rec": 0.8606,
+      "f1": 0.8606
+    }
+  },
+  "decode_errors": {},
+  "split": "dev",
+  "checkpoint": "experiments\\full_model\\full\\best.pt",
+  "beam_size": 5,
+  "decode_seconds": 748.04,
+  "ms_per_example": 723.44,
+  "eval_seconds": 11.54,
+  "parameters": {
+    "input_encoder": 28500992,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 37067826,
+    "trainable": 37067826
+  }
+}

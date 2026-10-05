@@ -1,0 +1,49 @@
+{
+  "examples": 1034,
+  "column_recall": 0.9307616221562809,
+  "column_recall_exact": 0.5420375865479723,
+  "column_recall_value": 0.2433234421364985,
+  "column_precision": 0.2583390528483185,
+  "table_recall": 0.8019169329073482,
+  "table_precision": 0.7110481586402266,
+  "gold_literal_coverage": 0.9215686274509803,
+  "mean_db_value_candidates": 1.5638297872340425,
+  "per_link_type": {
+    "EM": {
+      "linked_pairs": 1726,
+      "precision": 0.6349942062572422
+    },
+    "VEM": {
+      "linked_pairs": 884,
+      "precision": 0.2986425339366516
+    },
+    "PM": {
+      "linked_pairs": 4409,
+      "precision": 0.115672488092538
+    },
+    "VPM": {
+      "linked_pairs": 266,
+      "precision": 0.045112781954887216
+    },
+    "NUM": {
+      "linked_pairs": 1077,
+      "precision": 0.018570102135561744
+    }
+  },
+  "counts": {
+    "gold_cols": 2022,
+    "gold_cols_linked": 1882,
+    "gold_cols_exact": 1096,
+    "gold_cols_value": 492,
+    "linked_cols": 7285,
+    "linked_cols_used": 1882,
+    "gold_tabs": 1565,
+    "gold_tabs_linked": 1255,
+    "linked_tabs": 1765,
+    "linked_tabs_used": 1255,
+    "gold_literals": 663,
+    "gold_literals_resolved": 611,
+    "db_candidates": 1617,
+    "examples": 1034
+  }
+}

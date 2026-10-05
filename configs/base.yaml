@@ -1,0 +1,89 @@
+# Base configuration: every experiment inherits from this file.
+# All values here are defaults; mode configs (debug/small/full) and ablation
+# configs override a subset.  See reports/methodology.md for the rationale.
+
+seed: 42
+device: auto            # auto | cpu | cuda
+output_dir: experiments/full_model/base
+
+data:
+  dataset: spider                 # spider | synthetic
+  root: data/raw                  # searched recursively for Spider's tables.json
+  processed_dir: data/processed/spider
+  include_train_others: true      # train_spider.json + train_others.json (as in RAT-SQL)
+  train_fraction: 1.0             # data-scaling experiments reduce this
+  max_word_pieces: 8              # word pieces kept per question word
+  max_element_pieces: 16          # word pieces kept per column / table name
+
+preprocess:
+  linking:
+    max_ngram: 5                  # n-gram lengths 1..5 for name and value matching
+    max_vpm_per_token: 3          # cap on partial value matches per question token
+    value_linking: true
+    max_values_per_column: 5000   # distinct cell values indexed per column
+  values:
+    max_ngram: 4                  # question n-grams used as value candidates
+    max_db_values: 30
+    max_candidates: 128
+  validation:
+    fraction: 0.06                # share of *training databases* held out for model selection
+    seed: 0
+
+relations:
+  vocab: full                     # full | coarse (ablation K)
+  qq_max_dist: 2                  # question-question relative distance clipping (RAT-SQL: 2)
+  link_ngram: true                # name-based schema linking relations (ablation C)
+  link_value: true                # value-based linking relations (ablation D)
+  link_numbers: true
+  use_foreign_keys: true          # FK relations (ablation G)
+
+model:
+  encoder:
+    type: bert                    # bert | lstm (ablation I / baseline A)
+    pretrained_model: google/bert_uncased_L-8_H-512_A-8
+    max_length: 512
+    pooling: mean                 # mean | first_last | first
+    column_type_prefix: true      # column text = "<type> <name>"
+    freeze: false
+  rat:
+    d_model: 256
+    num_layers: 4
+    num_heads: 8
+    ff_dim: 1024
+    dropout: 0.1
+    use_relations: true           # false = vanilla transformer (baseline B / ablation F)
+    norm: pre                     # pre (official implementation) | post (paper equations)
+    share_relation_embeddings: false
+  decoder:
+    hidden: 512
+    action_dim: 128
+    type_dim: 64
+    att_heads: 8
+    dropout: 0.2
+    pointer: memory_aligned       # memory_aligned (RAT-SQL) | direct
+    pointer_dim: 256
+    grammar_mask: true            # false = ablation H (no grammar constraints)
+    pointer_fp32: true            # float32 pointer mixture; fp16 underflow -> inf losses / skipped AMP steps (see reports)
+
+train:
+  epochs: 30
+  batch_size: 16
+  grad_accum: 1
+  max_tokens: 400000              # cap on batch_size * max(N)^2 (limits attention memory)
+  lr: 7.0e-4                      # non-BERT parameters (RAT-SQL: 7.44e-4)
+  bert_lr: 3.0e-5
+  weight_decay: 0.0
+  warmup_ratio: 0.05
+  lr_power: 1.0                   # polynomial decay power
+  clip_grad: 1.0
+  amp: true                       # fp16 autocast on CUDA
+  eval_every: 2                   # epochs between validation runs
+  eval_batch_size: 32
+  patience: 0                     # 0 = no early stopping
+  select_metric: val_em
+  log_every: 50
+
+eval:
+  beam_size: 1
+  max_steps: 250
+  exec_timeout: 5.0

@@ -1,0 +1,98 @@
+{
+  "n": 1034,
+  "exact_match": 0.2466,
+  "grammar_validity": 1.0,
+  "parse_validity": 1.0,
+  "execution_accuracy": 0.2911,
+  "sql_validity": 0.7727,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 248,
+      "exact_match": 0.504,
+      "execution_accuracy": 0.5444
+    },
+    "medium": {
+      "n": 446,
+      "exact_match": 0.1883,
+      "execution_accuracy": 0.2422
+    },
+    "hard": {
+      "n": 174,
+      "exact_match": 0.1897,
+      "execution_accuracy": 0.2184
+    },
+    "extra": {
+      "n": 166,
+      "exact_match": 0.0783,
+      "execution_accuracy": 0.1205
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.6412,
+      "rec": 0.6412,
+      "f1": 0.6412
+    },
+    "select(no AGG)": {
+      "acc": 0.6896,
+      "rec": 0.6896,
+      "f1": 0.6896
+    },
+    "where": {
+      "acc": 0.4812,
+      "rec": 0.4812,
+      "f1": 0.4812
+    },
+    "where(no OP)": {
+      "acc": 0.6046,
+      "rec": 0.6046,
+      "f1": 0.6046
+    },
+    "group(no Having)": {
+      "acc": 0.5455,
+      "rec": 0.5535,
+      "f1": 0.5495
+    },
+    "group": {
+      "acc": 0.44,
+      "rec": 0.4465,
+      "f1": 0.4432
+    },
+    "order": {
+      "acc": 0.2857,
+      "rec": 0.3463,
+      "f1": 0.3131
+    },
+    "and/or": {
+      "acc": 0.9426,
+      "rec": 0.9455,
+      "f1": 0.944
+    },
+    "IUEN": {
+      "acc": 0.0727,
+      "rec": 0.0526,
+      "f1": 0.0611
+    },
+    "keywords": {
+      "acc": 0.5251,
+      "rec": 0.53,
+      "f1": 0.5275
+    }
+  },
+  "decode_errors": {},
+  "split": "dev",
+  "checkpoint": "C:\\Users\\LUCKYTHALLA\\Downloads\\RAT-SQL\\experiments\\scaling\\scaling_05pct\\best.pt",
+  "beam_size": 1,
+  "decode_seconds": 9.24,
+  "ms_per_example": 8.94,
+  "eval_seconds": 8.29,
+  "parameters": {
+    "input_encoder": 28500992,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 37067826,
+    "trainable": 37067826
+  }
+}

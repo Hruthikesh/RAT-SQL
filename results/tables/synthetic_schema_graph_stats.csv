@@ -1,0 +1,6 @@
+db_id,tables,columns,primary_keys,foreign_keys,schema_nodes,schema_edges,edges_cc_fk_backward,edges_cc_fk_forward,edges_cc_same_table,edges_ct_any_table,edges_ct_belongs_to,edges_ct_foreign_key,edges_ct_primary_key,edges_tc_any_table,edges_tc_belongs_to,edges_tc_foreign_key,edges_tc_primary_key,edges_tt_fk_backward,edges_tt_fk_forward
+company,3,14,3,2,18,100,2,2,54,3,11,2,3,3,11,2,3,2,2
+hospital,2,9,2,1,12,60,1,1,32,2,7,1,2,2,7,1,2,1,1
+library,2,9,2,1,12,60,1,1,32,2,7,1,2,2,7,1,2,1,1
+school,3,13,3,2,17,88,2,2,44,3,10,2,3,3,10,2,3,2,2
+store,3,12,3,2,16,78,2,2,36,3,9,2,3,3,9,2,3,2,2

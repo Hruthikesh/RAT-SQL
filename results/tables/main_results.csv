@@ -1,0 +1,7 @@
+experiment,description,split,n,exact_match,execution_accuracy,sql_validity,grammar_validity,parameters,trainable_parameters,train_examples,epochs_run,best_epoch,val_em_best,train_minutes,inference_ms_per_example,group,ablation_id,em_ci95,ex_ci95
+baseline_a_simple,"Baseline A: BiLSTM schema encoder + grammar decoder (no BERT, no RAT, no linking)",dev,1034,0.0957,0.0996,0.3172,1.0,22206770,22206770,8280,20,15,0.1741,41.5,31.93,baseline,,"[7.8, 11.3]","[8.2, 11.7]"
+baseline_b_vanilla_transformer,Baseline B: vanilla transformer (no relation-aware attention),dev,1034,0.3308,0.3143,0.5474,1.0,37056562,37056562,8280,20,20,0.4037,53.4,23.63,baseline,F,"[30.4, 36.0]","[28.7, 34.3]"
+baseline_c_no_linking,Baseline C: schema-aware RAT without schema linking,dev,1034,0.4874,0.53,0.8801,0.9981,37067826,37067826,8280,20,18,0.5435,57.7,27.43,baseline,B,"[45.6, 51.7]","[49.7, 56.0]"
+full,FULL: BERT + RAT + schema linking + grammar decoding,dev,1034,0.6141,0.6373,0.9236,1.0,37067826,37067826,8280,20,20,0.5884,51.8,22.98,main,A,"[58.4, 64.3]","[60.6, 66.5]"
+final,"Final: FULL with BERT-medium, 40 epochs",dev,1034,0.6489,0.6692,0.9004,1.0,49677362,49677362,8280,40,40,0.6491,101.3,12.39,final,,"[62.0, 67.7]","[64.1, 69.9]"
+final,"Final: FULL with BERT-medium, 40 epochs",test,2147,0.5934,0.6344,0.8864,0.9991,49677362,49677362,8280,40,40,0.6491,101.3,12.3,final,,"[57.3, 61.5]","[61.4, 65.5]"

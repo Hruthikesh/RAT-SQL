@@ -1,0 +1,9 @@
+{
+  "check": "fp16 underflow in the memory-aligned pointer mixture (controlled FULL checkpoint, val split)",
+  "non_finite_teacher_forced_losses_fp16_mixture": "20/379",
+  "non_finite_teacher_forced_losses_fp32_mixture": "0/379",
+  "identical_greedy_action_sequences": "378/379",
+  "training_batches_with_non_finite_loss": "none observed (all epoch-average training losses finite)",
+  "consequence": "validation loss reported as inf in controlled runs; EM/EX and checkpoint selection (by EM) unaffected; final model uses decoder.pointer_fp32=true",
+  "script": "diagnostic run during the experiment (see reports/RAT_SQL_REPORT.md, Limitations)"
+}

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Data (Spider is CC BY-SA 4.0 and downloaded by scripts/download_data.py; not redistributed here)
+data/raw/
+data/processed/
+
+# Official evaluation scripts are downloaded for cross-checking only
+third_party/
+
+# Model checkpoints (large); configs, histories and metrics are kept
+experiments/**/*.pt
+experiments/**/stdout.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

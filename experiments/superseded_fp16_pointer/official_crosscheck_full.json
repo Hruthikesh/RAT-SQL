@@ -1,0 +1,123 @@
+{
+  "predictions": "experiments/full_model/full/dev_predictions.jsonl",
+  "n": 1034,
+  "official_exact_match": 0.6150870406189555,
+  "ours_exact_match": 0.6150870406189555,
+  "em_agreement": 1.0,
+  "em_disagreements": 0,
+  "official_execution_accuracy_on_compared": 0.6350435624394967,
+  "ours_execution_accuracy_on_compared": 0.6302032913843175,
+  "exec_compared": 1033,
+  "exec_skipped_timeouts": [
+    "dev_00470"
+  ],
+  "official_execution_accuracy_all": 0.6344294003868471,
+  "exec_agreement": 0.9874152952565344,
+  "exec_disagreements": 13,
+  "disagreement_examples": [
+    {
+      "id": "dev_00075",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid",
+      "pred": "SELECT DISTINCT T1.Fname, T1.Age FROM Student AS T1 JOIN Has_Pet AS T2 JOIN Pets AS T3 ON T1.StuID = T2.StuID AND T2.PetID = T2.PetID"
+    },
+    {
+      "id": "dev_00076",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid",
+      "pred": "SELECT DISTINCT T1.Fname, T1.Age FROM Student AS T1 JOIN Has_Pet AS T2 JOIN Pets AS T3 ON T1.StuID = T2.StuID AND T2.PetID = T2.PetID"
+    },
+    {
+      "id": "dev_00154",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "select distinct year from cars_data where weight between 3000 and 4000;",
+      "pred": "SELECT DISTINCT Year FROM cars_data WHERE Weight < 4000 INTERSECT SELECT Year FROM cars_data WHERE Weight > 3000"
+    },
+    {
+      "id": "dev_00517",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT department_id) FROM Degree_Programs",
+      "pred": "SELECT count(*) FROM Departments"
+    },
+    {
+      "id": "dev_00518",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT department_id) FROM Degree_Programs",
+      "pred": "SELECT count(DISTINCT department_name) FROM Departments"
+    },
+    {
+      "id": "dev_00567",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(*) FROM Transcripts",
+      "pred": "SELECT count(DISTINCT transcript_id) FROM Transcript_Contents"
+    },
+    {
+      "id": "dev_00687",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(*) FROM area_code_state",
+      "pred": "SELECT count(DISTINCT state) FROM AREA_CODE_STATE"
+    },
+    {
+      "id": "dev_00752",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'English' OR T2.Language = 'Dutch'"
+    },
+    {
+      "id": "dev_00753",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'Dutch' OR T2.Language = 'English'"
+    },
+    {
+      "id": "dev_00966",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Dogs"
+    },
+    {
+      "id": "dev_00967",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Dogs"
+    },
+    {
+      "id": "dev_00968",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT professional_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Professionals"
+    },
+    {
+      "id": "dev_01032",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT T2.property_type_description FROM Properties AS T1 JOIN Ref_Property_Types AS T2 ON T1.property_type_code  =  T2.property_type_code GROUP BY T1.property_type_code",
+      "pred": "SELECT DISTINCT T1.property_type_description FROM Ref_Property_Types AS T1 JOIN Properties AS T2 ON T1.property_type_code = T2.property_type_code"
+    }
+  ]
+}

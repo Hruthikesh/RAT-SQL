@@ -1,0 +1,213 @@
+{
+  "predictions": "experiments/full_model/final/test_predictions.jsonl",
+  "n": 2147,
+  "official_exact_match": 0.5933861201676758,
+  "ours_exact_match": 0.5933861201676758,
+  "em_agreement": 1.0,
+  "em_disagreements": 0,
+  "official_execution_accuracy_on_compared": 0.6436567164179104,
+  "ours_execution_accuracy_on_compared": 0.6352611940298507,
+  "exec_compared": 2144,
+  "exec_skipped_timeouts": [
+    "test_00982",
+    "test_00990",
+    "test_01022"
+  ],
+  "official_execution_accuracy_all": 0.6427573358174197,
+  "exec_agreement": 0.9888059701492538,
+  "exec_disagreements": 24,
+  "disagreement_examples": [
+    {
+      "id": "test_00080",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT order_item_status_code) FROM Order_items",
+      "pred": "SELECT count(*) FROM Orders AS T1 JOIN Order_Items AS T2 ON T1.order_id = T2.order_id"
+    },
+    {
+      "id": "test_00081",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT order_item_status_code) FROM Order_items",
+      "pred": "SELECT count(DISTINCT T1.order_status_code) FROM Orders AS T1 JOIN Order_Items AS T2 ON T1.order_id = T2.order_id"
+    },
+    {
+      "id": "test_00172",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Name FROM driver AS T1 JOIN vehicle_driver AS T2 ON T1.driver_id  =  T2.driver_id JOIN vehicle AS T3 ON T2.vehicle_id  =  T3.vehicle_id WHERE T3.power  >  5000",
+      "pred": "SELECT T2.Name FROM vehicle_driver AS T1 JOIN driver AS T2 JOIN vehicle AS T3 ON T1.Driver_ID = T2.Driver_ID AND T1.Vehicle_ID = T3.Vehicle_ID WHERE T3.Power > 5000"
+    },
+    {
+      "id": "test_00707",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT OWNER FROM Document_Subset_Members AS T1 JOIN Document_Objects AS T2 ON T1.Related_Document_Object_ID  =  T2.Document_Object_ID WHERE T2.Owner  =  'Braeden';",
+      "pred": "SELECT Owner FROM Document_Objects WHERE Owner = 'Braeden'"
+    },
+    {
+      "id": "test_00708",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT OWNER FROM Document_Subset_Members AS T1 JOIN Document_Objects AS T2 ON T1.Related_Document_Object_ID  =  T2.Document_Object_ID WHERE T2.Owner  =  'Braeden';",
+      "pred": "SELECT DISTINCT Owner FROM Document_Objects WHERE Owner = 'Braeden'"
+    },
+    {
+      "id": "test_00711",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT T1.Document_Subset_ID ,  T2.Document_Subset_Name , count(DISTINCT T1.Document_Object_ID) FROM Document_Subset_Members AS T1 JOIN Document_Subsets AS T2 ON T1.Document_Subset_ID =  T2.Document_Subset_ID GROUP BY T1.Document_Subset_ID;",
+      "pred": "SELECT T1.Document_Subset_ID, T1.Document_Subset_Name, count(*) FROM Document_Subsets AS T1 JOIN Document_Subset_Members AS T2 ON T1.Document_Subset_ID = T2.Document_Subset_ID GROUP BY T1.Document_Subset_ID"
+    },
+    {
+      "id": "test_00712",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT T1.Document_Subset_ID ,  T2.Document_Subset_Name , count(DISTINCT T1.Document_Object_ID) FROM Document_Subset_Members AS T1 JOIN Document_Subsets AS T2 ON T1.Document_Subset_ID =  T2.Document_Subset_ID GROUP BY T1.Document_Subset_ID;",
+      "pred": "SELECT T1.Document_Subset_ID, T1.Document_Subset_Name, count(*) FROM Document_Subsets AS T1 JOIN Document_Subset_Members AS T2 ON T1.Document_Subset_ID = T2.Document_Subset_ID GROUP BY T1.Document_Subset_ID"
+    },
+    {
+      "id": "test_00736",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT T4.Collection_Name FROM Collection_Subset_Members AS T1 JOIN Collection_Subset_Members AS T2 ON T1.Related_Collection_ID = T2.Collection_ID JOIN Collections AS T3 ON T1.Collection_ID = T3.Collection_ID JOIN Collections AS T4 ON T2.Collection_ID = T4.Collection_ID WHERE T3.Collection_Name = \"Best\";",
+      "pred": "SELECT Collection_Name FROM Collections"
+    },
+    {
+      "id": "test_00875",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.name FROM Sailors AS T1 JOIN Reserves AS T2 ON T1.sid  =  T2.sid WHERE  T2.bid  =  103",
+      "pred": "SELECT T1.name FROM Sailors AS T1 JOIN Reserves AS T2 ON T1.sid = T2.sid WHERE T2.bid = 103"
+    },
+    {
+      "id": "test_00876",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.name FROM Sailors AS T1 JOIN Reserves AS T2 ON T1.sid  =  T2.sid WHERE  T2.bid  =  103",
+      "pred": "SELECT T1.name FROM Sailors AS T1 JOIN Reserves AS T2 ON T1.sid = T2.sid WHERE T2.bid = 103"
+    },
+    {
+      "id": "test_00975",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT venue ,  YEAR FROM paper ORDER BY YEAR",
+      "pred": "SELECT venue, year FROM Paper ORDER BY year ASC"
+    },
+    {
+      "id": "test_01044",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT T2.paper_id) ,  T1.name FROM Affiliation AS T1 JOIN Author_list AS T2 ON T1.affiliation_id  =  T2.affiliation_id GROUP BY T1.affiliation_id",
+      "pred": "SELECT count(*), T1.name FROM Affiliation AS T1 JOIN Author_list AS T2 ON T1.affiliation_id = T2.affiliation_id GROUP BY T1.affiliation_id"
+    },
+    {
+      "id": "test_01087",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.name FROM staff AS T1 JOIN conference_participation AS T2 JOIN Conference AS T3 ON T1.staff_id  =  T2.staff_id AND T2.conference_id  =  T3.conference_id WHERE T3.year  =  2003 OR T3.year  =  2004",
+      "pred": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 JOIN conference AS T3 ON T1.staff_ID = T2.staff_ID AND T2.Conference_ID = T3.Conference_ID WHERE T3.Year = 2003 OR T3.Year = 2004"
+    },
+    {
+      "id": "test_01088",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.name FROM staff AS T1 JOIN conference_participation AS T2 JOIN Conference AS T3 ON T1.staff_id  =  T2.staff_id AND T2.conference_id  =  T3.conference_id WHERE T3.year  =  2003 OR T3.year  =  2004",
+      "pred": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 JOIN conference AS T3 ON T1.staff_ID = T2.staff_ID AND T2.Conference_ID = T3.Conference_ID WHERE T3.Year BETWEEN 2003 AND 2004"
+    },
+    {
+      "id": "test_01243",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.fname FROM artists AS T1 JOIN paintings AS T2 ON T1.artistID  =  T2.painterID WHERE T2.medium  =  \"oil\" AND LOCATION  =  \"Gallery 241\"",
+      "pred": "SELECT T1.fname FROM Artists AS T1 JOIN Paintings AS T2 ON T1.artistID = T2.painterID WHERE T2.location = 'Gallery 241' AND T2.medium = 'oil'"
+    },
+    {
+      "id": "test_01276",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT LOCATION FROM paintings WHERE YEAR  < 1885 OR YEAR  >  1930",
+      "pred": "SELECT location FROM Paintings WHERE year < 1885 OR year > 1930"
+    },
+    {
+      "id": "test_01320",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT CONSTRUCTOR FROM driver ORDER BY Age ASC",
+      "pred": "SELECT Constructor FROM driver ORDER BY Age ASC"
+    },
+    {
+      "id": "test_01400",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.county_state_province FROM Addresses AS T1 JOIN Properties AS T2 ON T1.address_id  =  T2.property_address_id;",
+      "pred": "SELECT T2.county_state_province FROM Properties AS T1 JOIN Addresses AS T2 ON T1.property_address_id = T2.address_id"
+    },
+    {
+      "id": "test_01401",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.county_state_province FROM Addresses AS T1 JOIN Properties AS T2 ON T1.address_id  =  T2.property_address_id;",
+      "pred": "SELECT T2.county_state_province FROM Properties AS T1 JOIN Addresses AS T2 ON T1.property_address_id = T2.address_id"
+    },
+    {
+      "id": "test_01565",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT date ,  COUNT (DISTINCT CustomerId) FROM receipts GROUP BY date",
+      "pred": "SELECT Date, count(*) FROM receipts GROUP BY Date"
+    },
+    {
+      "id": "test_01566",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT date ,  COUNT (DISTINCT CustomerId) FROM receipts GROUP BY date",
+      "pred": "SELECT Date, count(*) FROM receipts GROUP BY Date"
+    },
+    {
+      "id": "test_01620",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT T1.Country FROM country AS T1 JOIN driver AS T2 ON T1.Country_ID  =  T2.Country WHERE T2.Points  >  150",
+      "pred": "SELECT DISTINCT T1.Country FROM country AS T1 JOIN driver AS T2 ON T1.Country_Id = T2.Country WHERE T2.Points > 150"
+    },
+    {
+      "id": "test_01767",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT home_conference FROM University",
+      "pred": "SELECT Home_Conference FROM university"
+    },
+    {
+      "id": "test_02047",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT process_id FROM Documents_processes",
+      "pred": "SELECT process_id FROM Documents_Processes"
+    }
+  ]
+}

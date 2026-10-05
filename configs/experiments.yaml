@@ -1,0 +1,139 @@
+# Registry of all controlled experiments.  Every experiment starts from `base_config`
+# and applies the dotted `overrides`.  scripts/run_ablation.py trains each one on the
+# Spider training split (minus held-out validation DBs), selects the checkpoint on the
+# validation DBs and evaluates it on Spider dev.  Results -> results/tables/*.csv
+base_config: configs/small.yaml
+
+experiments:
+  # ------------------------------------------------------------------ main model
+  - name: full
+    group: main
+    label: "FULL: BERT + RAT + schema linking + grammar decoding"
+    ablation_id: A
+    overrides: {}
+
+  # ------------------------------------------------------------------ baselines
+  - name: baseline_a_simple
+    group: baseline
+    label: "Baseline A: BiLSTM schema encoder + grammar decoder (no BERT, no RAT, no linking)"
+    overrides:
+      model.encoder.type: lstm
+      model.encoder.init_from_pretrained: true
+      model.rat.num_layers: 0
+      relations.link_ngram: false
+      relations.link_value: false
+      relations.link_numbers: false
+
+  - name: baseline_b_vanilla_transformer
+    group: baseline
+    label: "Baseline B: vanilla transformer (no relation-aware attention)"
+    ablation_id: F
+    overrides:
+      model.rat.use_relations: false
+
+  - name: baseline_c_no_linking
+    group: baseline
+    label: "Baseline C: schema-aware RAT without schema linking"
+    ablation_id: B
+    overrides:
+      relations.link_ngram: false
+      relations.link_value: false
+      relations.link_numbers: false
+
+  # ------------------------------------------------------------------ ablations
+  - name: ablation_c_no_ngram_linking
+    group: ablation
+    label: "No n-gram (name) linking"
+    ablation_id: C
+    overrides:
+      relations.link_ngram: false
+
+  - name: ablation_d_no_value_linking
+    group: ablation
+    label: "No value (cell) linking"
+    ablation_id: D
+    overrides:
+      relations.link_value: false
+
+  - name: ablation_e_no_rat
+    group: ablation
+    label: "No relation-aware transformer (BERT output fed to decoder)"
+    ablation_id: E
+    overrides:
+      model.rat.num_layers: 0
+
+  - name: ablation_g_no_foreign_keys
+    group: ablation
+    label: "No foreign-key relations"
+    ablation_id: G
+    overrides:
+      relations.use_foreign_keys: false
+
+  - name: ablation_h_no_grammar
+    group: ablation
+    label: "No grammar constraints (unmasked action softmax)"
+    ablation_id: H
+    overrides:
+      model.decoder.grammar_mask: false
+
+  # H depends on the pointer parameterisation: memory-aligned pointers output log-probabilities
+  # normalised *within* each action kind, which gives an unmasked decoder little freedom to prefer
+  # one kind over another.  H2 / H2-ref repeat the grammar ablation with direct (unnormalised)
+  # bilinear pointers, with and without the grammar mask.
+  - name: ablation_h2_ref_direct_pointer
+    group: ablation
+    label: "Direct pointers, grammar constraints (reference for H2)"
+    ablation_id: H2-ref
+    overrides:
+      model.decoder.pointer: direct
+
+  - name: ablation_h2_no_grammar_direct_pointer
+    group: ablation
+    label: "Direct pointers, no grammar constraints"
+    ablation_id: H2
+    overrides:
+      model.decoder.pointer: direct
+      model.decoder.grammar_mask: false
+
+  - name: ablation_i_lstm_encoder
+    group: ablation
+    label: "BiLSTM instead of BERT (with RAT + linking)"
+    ablation_id: I
+    overrides:
+      model.encoder.type: lstm
+      model.encoder.init_from_pretrained: true
+
+  - name: ablation_k_coarse_relations
+    group: ablation
+    label: "Coarse relation vocabulary (6 undirected relation types)"
+    ablation_id: K
+    overrides:
+      relations.vocab: coarse
+
+  # ------------------------------------------------------------------ data scaling (ablation J)
+  - name: scaling_01pct
+    group: scaling
+    ablation_id: J
+    label: "1% of training data"
+    overrides: {data.train_fraction: 0.01}
+    epoch_multiplier: 10.0
+  - name: scaling_05pct
+    group: scaling
+    label: "5% of training data"
+    overrides: {data.train_fraction: 0.05}
+    epoch_multiplier: 4.47
+  - name: scaling_10pct
+    group: scaling
+    label: "10% of training data"
+    overrides: {data.train_fraction: 0.10}
+    epoch_multiplier: 3.16
+  - name: scaling_25pct
+    group: scaling
+    label: "25% of training data"
+    overrides: {data.train_fraction: 0.25}
+    epoch_multiplier: 2.0
+  - name: scaling_50pct
+    group: scaling
+    label: "50% of training data"
+    overrides: {data.train_fraction: 0.50}
+    epoch_multiplier: 1.41

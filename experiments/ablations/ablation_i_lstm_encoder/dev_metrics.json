@@ -1,0 +1,100 @@
+{
+  "n": 1034,
+  "exact_match": 0.499,
+  "grammar_validity": 0.999,
+  "parse_validity": 0.999,
+  "execution_accuracy": 0.528,
+  "sql_validity": 0.8559,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 248,
+      "exact_match": 0.7581,
+      "execution_accuracy": 0.7742
+    },
+    "medium": {
+      "n": 446,
+      "exact_match": 0.4641,
+      "execution_accuracy": 0.5
+    },
+    "hard": {
+      "n": 174,
+      "exact_match": 0.3908,
+      "execution_accuracy": 0.4368
+    },
+    "extra": {
+      "n": 166,
+      "exact_match": 0.3193,
+      "execution_accuracy": 0.3313
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.7783,
+      "rec": 0.7776,
+      "f1": 0.7779
+    },
+    "select(no AGG)": {
+      "acc": 0.7977,
+      "rec": 0.7969,
+      "f1": 0.7973
+    },
+    "where": {
+      "acc": 0.7031,
+      "rec": 0.6736,
+      "f1": 0.688
+    },
+    "where(no OP)": {
+      "acc": 0.7598,
+      "rec": 0.728,
+      "f1": 0.7436
+    },
+    "group(no Having)": {
+      "acc": 0.7748,
+      "rec": 0.7491,
+      "f1": 0.7617
+    },
+    "group": {
+      "acc": 0.7252,
+      "rec": 0.7011,
+      "f1": 0.7129
+    },
+    "order": {
+      "acc": 0.6864,
+      "rec": 0.7013,
+      "f1": 0.6938
+    },
+    "and/or": {
+      "acc": 0.9647,
+      "rec": 0.984,
+      "f1": 0.9743
+    },
+    "IUEN": {
+      "acc": 0.2208,
+      "rec": 0.2237,
+      "f1": 0.2222
+    },
+    "keywords": {
+      "acc": 0.8314,
+      "rec": 0.818,
+      "f1": 0.8246
+    }
+  },
+  "decode_errors": {
+    "exceeded max_steps=250": 1
+  },
+  "split": "dev",
+  "checkpoint": "C:\\Users\\LUCKYTHALLA\\Downloads\\RAT-SQL\\experiments\\ablations\\ablation_i_lstm_encoder\\best.pt",
+  "beam_size": 1,
+  "decode_seconds": 11.56,
+  "ms_per_example": 11.18,
+  "eval_seconds": 15.93,
+  "parameters": {
+    "input_encoder": 16942080,
+    "rat_encoder": 3170816,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 25377586,
+    "trainable": 25377586
+  }
+}

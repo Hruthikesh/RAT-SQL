@@ -1,0 +1,7 @@
+experiment,description,train_examples,exact_match,execution_accuracy,sql_validity,epochs_run,best_epoch,train_minutes
+scaling_01pct,1% of training data,83,0.0416,0.0716,0.53,200,200,4.3
+scaling_05pct,5% of training data,414,0.2466,0.2911,0.7727,89,89,7.1
+scaling_10pct,10% of training data,828,0.3453,0.3965,0.8337,63,63,11.5
+scaling_25pct,25% of training data,2070,0.471,0.4758,0.8656,40,36,19.4
+scaling_50pct,50% of training data,4140,0.5406,0.5851,0.8762,28,28,26.9
+full,100% of training data,8280,0.6141,0.6373,0.9236,20,20,51.8

@@ -1,0 +1,95 @@
+{
+  "seed": 42,
+  "device": "auto",
+  "output_dir": "experiments/sanity/small_8ep",
+  "data": {
+    "dataset": "spider",
+    "root": "data/raw",
+    "processed_dir": "data/processed/spider",
+    "include_train_others": true,
+    "train_fraction": 1.0,
+    "max_word_pieces": 8,
+    "max_element_pieces": 16
+  },
+  "preprocess": {
+    "linking": {
+      "max_ngram": 5,
+      "max_vpm_per_token": 3,
+      "value_linking": true,
+      "max_values_per_column": 5000
+    },
+    "values": {
+      "max_ngram": 4,
+      "max_db_values": 30,
+      "max_candidates": 128
+    },
+    "validation": {
+      "fraction": 0.06,
+      "seed": 0
+    }
+  },
+  "relations": {
+    "vocab": "full",
+    "qq_max_dist": 2,
+    "link_ngram": true,
+    "link_value": true,
+    "link_numbers": true,
+    "use_foreign_keys": true
+  },
+  "model": {
+    "encoder": {
+      "type": "bert",
+      "pretrained_model": "google/bert_uncased_L-4_H-512_A-8",
+      "max_length": 512,
+      "pooling": "mean",
+      "column_type_prefix": true,
+      "freeze": false
+    },
+    "rat": {
+      "d_model": 256,
+      "num_layers": 4,
+      "num_heads": 8,
+      "ff_dim": 1024,
+      "dropout": 0.1,
+      "use_relations": true,
+      "norm": "pre",
+      "share_relation_embeddings": false
+    },
+    "decoder": {
+      "hidden": 512,
+      "action_dim": 128,
+      "type_dim": 64,
+      "att_heads": 8,
+      "dropout": 0.2,
+      "pointer": "memory_aligned",
+      "pointer_dim": 256,
+      "grammar_mask": true
+    }
+  },
+  "train": {
+    "epochs": 8,
+    "batch_size": 48,
+    "grad_accum": 1,
+    "max_tokens": 16384,
+    "lr": 0.001,
+    "bert_lr": 5e-05,
+    "weight_decay": 0.0,
+    "warmup_ratio": 0.05,
+    "lr_power": 1.0,
+    "clip_grad": 1.0,
+    "amp": true,
+    "eval_every": 2,
+    "eval_batch_size": 64,
+    "patience": 0,
+    "select_metric": "val_em",
+    "log_every": 50
+  },
+  "eval": {
+    "beam_size": 1,
+    "max_steps": 250,
+    "exec_timeout": 5.0
+  },
+  "_meta": {
+    "config_path": "configs\\small.yaml"
+  }
+}

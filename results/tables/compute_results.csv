@@ -1,0 +1,13 @@
+experiment,description,parameters,epochs,optimizer_steps,train_minutes,median_epoch_seconds,train_examples_per_second,greedy_ms_per_example,beam5_ms_per_example
+full,FULL: BERT + RAT + schema linking + grammar decoding,37067826,20,4940,51.8,161.2,51.4,22.98,
+baseline_a_simple,"Baseline A: BiLSTM schema encoder + grammar decoder (no BERT, no RAT, no linking)",22206770,20,4940,41.5,132.0,62.7,31.93,
+baseline_b_vanilla_transformer,Baseline B: vanilla transformer (no relation-aware attention),37056562,20,4940,53.4,170.3,48.6,23.63,
+baseline_c_no_linking,Baseline C: schema-aware RAT without schema linking,37067826,20,4940,57.7,164.5,50.3,27.43,
+ablation_c_no_ngram_linking,No n-gram (name) linking,37067826,20,4940,40.9,112.8,73.4,10.26,
+ablation_d_no_value_linking,No value (cell) linking,37067826,20,4940,37.2,113.2,73.2,10.15,
+ablation_e_no_rat,No relation-aware transformer (BERT output fed to decoder),33897010,20,4940,31.4,95.5,86.7,9.89,
+ablation_g_no_foreign_keys,No foreign-key relations,37067826,20,4940,36.6,111.4,74.3,10.66,
+ablation_h_no_grammar,No grammar constraints (unmasked action softmax),37067826,20,4940,36.6,111.2,74.5,7.26,
+ablation_i_lstm_encoder,BiLSTM instead of BERT (with RAT + linking),25377586,20,4940,27.8,84.7,97.8,11.18,
+ablation_k_coarse_relations,Coarse relation vocabulary (6 undirected relation types),37058354,20,4940,36.8,111.7,74.1,9.75,
+final,"Final: FULL with BERT-medium, 40 epochs",49677362,40,11520,101.3,153.6,53.9,12.39,

@@ -1,0 +1,129 @@
+{
+  "predictions": "experiments/full_model/final/dev_predictions.jsonl",
+  "n": 1034,
+  "official_exact_match": 0.648936170212766,
+  "ours_exact_match": 0.648936170212766,
+  "em_agreement": 1.0,
+  "em_disagreements": 0,
+  "official_execution_accuracy_on_compared": 0.6808510638297872,
+  "ours_execution_accuracy_on_compared": 0.6692456479690522,
+  "exec_compared": 1034,
+  "exec_skipped_timeouts": [],
+  "official_execution_accuracy_all": 0.6808510638297872,
+  "exec_agreement": 0.9864603481624759,
+  "exec_disagreements": 14,
+  "disagreement_examples": [
+    {
+      "id": "dev_00154",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "select distinct year from cars_data where weight between 3000 and 4000;",
+      "pred": "SELECT DISTINCT Year FROM cars_data WHERE Weight < 4000 INTERSECT SELECT Year FROM cars_data WHERE Weight > 3000"
+    },
+    {
+      "id": "dev_00519",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT degree_summary_name) FROM Degree_Programs",
+      "pred": "SELECT count(DISTINCT course_name) FROM Courses"
+    },
+    {
+      "id": "dev_00520",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT degree_summary_name) FROM Degree_Programs",
+      "pred": "SELECT count(DISTINCT degree_program_id) FROM Degree_Programs"
+    },
+    {
+      "id": "dev_00687",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(*) FROM area_code_state",
+      "pred": "SELECT count(DISTINCT state) FROM AREA_CODE_STATE"
+    },
+    {
+      "id": "dev_00734",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT GovernmentForm) FROM country WHERE Continent  =  \"Africa\"",
+      "pred": "SELECT count(*) FROM country WHERE Continent = 'Africa'"
+    },
+    {
+      "id": "dev_00752",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'English' OR T2.Language = 'Dutch'"
+    },
+    {
+      "id": "dev_00753",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'Dutch' OR T2.Language = 'English'"
+    },
+    {
+      "id": "dev_00780",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT CountryCode FROM countrylanguage WHERE LANGUAGE != \"English\"",
+      "pred": "SELECT T1.Code FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language != 'English'"
+    },
+    {
+      "id": "dev_00866",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT grade FROM Highschooler",
+      "pred": "SELECT DISTINCT grade FROM Highschooler"
+    },
+    {
+      "id": "dev_00867",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT grade FROM Highschooler",
+      "pred": "SELECT DISTINCT grade FROM Highschooler"
+    },
+    {
+      "id": "dev_00959",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.date_arrived ,  T1.date_departed FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id  =  T2.dog_id",
+      "pred": "SELECT T1.date_arrived, T1.date_departed FROM Dogs AS T1 JOIN Treatments AS T2 ON T1.dog_id = T2.dog_id"
+    },
+    {
+      "id": "dev_00966",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Dogs"
+    },
+    {
+      "id": "dev_00967",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Treatments"
+    },
+    {
+      "id": "dev_00969",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT professional_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Treatments"
+    }
+  ]
+}

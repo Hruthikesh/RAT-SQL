@@ -1,0 +1,8668 @@
+[
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose genre is Mystery.",
+  "query": "SELECT title FROM book WHERE genre = 'Mystery'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Mystery\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of patients of the doctor Ivy Mehta.",
+  "query": "SELECT T1.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id WHERE T2.name = 'Ivy Mehta'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Ivy Mehta\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose author has country Brazil.",
+  "query": "SELECT T1.title FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id WHERE T2.country = 'Brazil'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Brazil\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books are there for each genre?",
+  "query": "SELECT genre, count(*) FROM book GROUP BY genre",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     7,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List authors in descending order of birth year.",
+  "query": "SELECT name FROM author ORDER BY birth_year DESC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which specialty has the most doctors?",
+  "query": "SELECT specialty FROM doctor GROUP BY specialty ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose specialty is Pediatrics.",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Pediatrics'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Pediatrics\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose specialty is Neurology.",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Neurology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Neurology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the minimum age of patients?",
+  "query": "SELECT min(age) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      2,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the minimum experience of doctors?",
+  "query": "SELECT min(experience) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      2,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the average birth year of authors for each country?",
+  "query": "SELECT country, avg(birth_year) FROM author GROUP BY country",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of all patients.",
+  "query": "SELECT name FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which authors have country France?",
+  "query": "SELECT name FROM author WHERE country = 'France'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"France\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which country has the most authors?",
+  "query": "SELECT country FROM author GROUP BY country ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books are there?",
+  "query": "SELECT count(*) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which author has the most books?",
+  "query": "SELECT T2.name FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id GROUP BY T1.author_id ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     9,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have city Hyderabad?",
+  "query": "SELECT count(*) FROM doctor WHERE city = 'Hyderabad'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Hyderabad\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which authors have country Canada?",
+  "query": "SELECT name FROM author WHERE country = 'Canada'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Canada\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which author has the lowest birth year?",
+  "query": "SELECT name FROM author ORDER BY birth_year ASC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctor has the most patients?",
+  "query": "SELECT T2.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id GROUP BY T1.doctor_id ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     9,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which genre has the most books?",
+  "query": "SELECT genre FROM book GROUP BY genre ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     7,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of books of the author Ivy Mehta.",
+  "query": "SELECT T1.title FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id WHERE T2.name = 'Ivy Mehta'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Ivy Mehta\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show each genre and the number of books.",
+  "query": "SELECT genre, count(*) FROM book GROUP BY genre",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     7,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of patients whose doctor has specialty Neurology.",
+  "query": "SELECT T1.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id WHERE T2.specialty = 'Neurology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Neurology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the total pages of all books?",
+  "query": "SELECT sum(pages) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      4,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show each country and the number of authors.",
+  "query": "SELECT country, count(*) FROM author GROUP BY country",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have specialty Neurology?",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Neurology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Neurology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the top 3 authors with the largest birth year?",
+  "query": "SELECT name FROM author ORDER BY birth_year DESC LIMIT 3",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 3,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have city Boston?",
+  "query": "SELECT name FROM doctor WHERE city = 'Boston'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Boston\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List books in descending order of pages.",
+  "query": "SELECT title FROM book ORDER BY pages DESC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find books with pages between 110 and 470.",
+  "query": "SELECT title FROM book WHERE pages BETWEEN 110 AND 470",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     1,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     110.0,
+     470.0
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the top 3 doctors with the largest experience?",
+  "query": "SELECT name FROM doctor ORDER BY experience DESC LIMIT 3",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 3,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of patients with age less than 43.",
+  "query": "SELECT name FROM patient WHERE age < 43",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     4,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     43.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have city Chennai?",
+  "query": "SELECT name FROM doctor WHERE city = 'Chennai'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Chennai\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which book has the lowest pages?",
+  "query": "SELECT title FROM book ORDER BY pages ASC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the distinct specialtys of doctors.",
+  "query": "SELECT DISTINCT specialty FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    true,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List doctors in descending order of experience.",
+  "query": "SELECT name FROM doctor ORDER BY experience DESC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find patients with age greater than 43.",
+  "query": "SELECT name FROM patient WHERE age > 43",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     43.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find authors with birth year greater than 1956.",
+  "query": "SELECT name FROM author WHERE birth_year > 1956",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     1956.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which city has the most doctors?",
+  "query": "SELECT city FROM doctor GROUP BY city ORDER BY count(*) DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     4,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many authors have country Brazil?",
+  "query": "SELECT count(*) FROM author WHERE country = 'Brazil'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Brazil\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the average pages of books?",
+  "query": "SELECT avg(pages) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which countrys have more than 2 authors?",
+  "query": "SELECT country FROM author GROUP BY country HAVING count(*) > 2",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ],
+     2.0,
+     null
+    ]
+   ],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which specialtys have more than 1 doctors?",
+  "query": "SELECT specialty FROM doctor GROUP BY specialty HAVING count(*) > 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ],
+     1.0,
+     null
+    ]
+   ],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which genres have more than 1 books?",
+  "query": "SELECT genre FROM book GROUP BY genre HAVING count(*) > 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     7,
+     false
+    ]
+   ],
+   "having": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ],
+     1.0,
+     null
+    ]
+   ],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of patients of the doctor Ana Rao.",
+  "query": "SELECT T1.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id WHERE T2.name = 'Ana Rao'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Ana Rao\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of all doctors.",
+  "query": "SELECT name FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Count the number of doctors.",
+  "query": "SELECT count(*) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of doctors with experience less than 28.",
+  "query": "SELECT name FROM doctor WHERE experience < 28",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     4,
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ],
+     28.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show each city and the number of doctors.",
+  "query": "SELECT city, count(*) FROM doctor GROUP BY city",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     4,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose specialty is Cardiology.",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Cardiology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Cardiology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of patients of the doctor Arjun Shah.",
+  "query": "SELECT T1.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id WHERE T2.name = 'Arjun Shah'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Arjun Shah\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have specialty Cardiology?",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Cardiology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Cardiology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books have genre Fantasy?",
+  "query": "SELECT count(*) FROM book WHERE genre = 'Fantasy'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Fantasy\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books have genre History?",
+  "query": "SELECT count(*) FROM book WHERE genre = 'History'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"History\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors practice in Hyderabad?",
+  "query": "SELECT name FROM doctor WHERE city = 'Hyderabad'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Hyderabad\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors are there?",
+  "query": "SELECT count(*) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show the name and age of all patients.",
+  "query": "SELECT name, age FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of patients whose doctor has specialty Cardiology.",
+  "query": "SELECT T1.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id WHERE T2.specialty = 'Cardiology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Cardiology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctor has the lowest experience?",
+  "query": "SELECT name FROM doctor ORDER BY experience ASC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find books with pages greater than 470.",
+  "query": "SELECT title FROM book WHERE pages > 470",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     470.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the name of authors whose country is France.",
+  "query": "SELECT name FROM author WHERE country = 'France'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"France\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show the name of the author with the highest birth year.",
+  "query": "SELECT name FROM author ORDER BY birth_year DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose experience is above the average.",
+  "query": "SELECT name FROM doctor WHERE experience > (SELECT avg(experience) FROM doctor)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         0
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         5,
+         [
+          0,
+          [
+           0,
+           5,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the average pages of books for each genre?",
+  "query": "SELECT genre, avg(pages) FROM book GROUP BY genre",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     7,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose genre is History.",
+  "query": "SELECT title FROM book WHERE genre = 'History'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"History\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the name of authors whose birth year is above the average.",
+  "query": "SELECT name FROM author WHERE birth_year > (SELECT avg(birth_year) FROM author)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         0
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         5,
+         [
+          0,
+          [
+           0,
+           4,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What are the titles of the books?",
+  "query": "SELECT title FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the total experience of all doctors?",
+  "query": "SELECT sum(experience) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      4,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose city is Chennai.",
+  "query": "SELECT name FROM doctor WHERE city = 'Chennai'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Chennai\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books have genre Mystery?",
+  "query": "SELECT count(*) FROM book WHERE genre = 'Mystery'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Mystery\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Count the number of patients.",
+  "query": "SELECT count(*) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which books have genre History?",
+  "query": "SELECT title FROM book WHERE genre = 'History'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"History\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show each specialty and the number of doctors.",
+  "query": "SELECT specialty, count(*) FROM doctor GROUP BY specialty",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which patient has the lowest age?",
+  "query": "SELECT name FROM patient ORDER BY age ASC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Count the number of books.",
+  "query": "SELECT count(*) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the name of authors whose country is Brazil.",
+  "query": "SELECT name FROM author WHERE country = 'Brazil'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Brazil\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose city is Boston.",
+  "query": "SELECT name FROM doctor WHERE city = 'Boston'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Boston\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many books does each author have?",
+  "query": "SELECT T2.name, count(*) FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id GROUP BY T2.name",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     2,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the authors that have no books.",
+  "query": "SELECT name FROM author WHERE author_id NOT IN (SELECT author_id FROM book)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     true,
+     8,
+     [
+      0,
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         1
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         0,
+         [
+          0,
+          [
+           0,
+           9,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which books have genre Mystery?",
+  "query": "SELECT title FROM book WHERE genre = 'Mystery'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Mystery\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What are the names of the authors?",
+  "query": "SELECT name FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the average experience of doctors?",
+  "query": "SELECT avg(experience) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the average experience of doctors for each specialty?",
+  "query": "SELECT specialty, avg(experience) FROM doctor GROUP BY specialty",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the average birth year of authors?",
+  "query": "SELECT avg(birth_year) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the top 3 patients with the largest age?",
+  "query": "SELECT name FROM patient ORDER BY age DESC LIMIT 3",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 3,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show the title of each book and the name of its author.",
+  "query": "SELECT T1.title, T2.name FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose pages is above the average.",
+  "query": "SELECT title FROM book WHERE pages > (SELECT avg(pages) FROM book)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         1
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         5,
+         [
+          0,
+          [
+           0,
+           8,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have specialty Cardiology?",
+  "query": "SELECT count(*) FROM doctor WHERE specialty = 'Cardiology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Cardiology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of all books.",
+  "query": "SELECT title FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find doctors with experience greater than 28.",
+  "query": "SELECT name FROM doctor WHERE experience > 28",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ],
+     28.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the maximum experience of all doctors?",
+  "query": "SELECT max(experience) FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      1,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have city Chennai?",
+  "query": "SELECT count(*) FROM doctor WHERE city = 'Chennai'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Chennai\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show the name and birth year of all authors.",
+  "query": "SELECT name, birth_year FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the distinct genres of books.",
+  "query": "SELECT DISTINCT genre FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    true,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors are there for each city?",
+  "query": "SELECT city, count(*) FROM doctor GROUP BY city",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     4,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of patients whose age is above the average.",
+  "query": "SELECT name FROM patient WHERE age > (SELECT avg(age) FROM patient)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         1
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         5,
+         [
+          0,
+          [
+           0,
+           8,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of doctors sorted by experience.",
+  "query": "SELECT name FROM doctor ORDER BY experience ASC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show the name of each patient and the name of its doctor.",
+  "query": "SELECT T1.name, T2.name FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show the title of the book with the highest pages.",
+  "query": "SELECT title FROM book ORDER BY pages DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List patients in descending order of age.",
+  "query": "SELECT name FROM patient ORDER BY age DESC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many patients does each doctor have?",
+  "query": "SELECT T2.name, count(*) FROM patient AS T1 JOIN doctor AS T2 ON T1.doctor_id = T2.doctor_id GROUP BY T2.name",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     2,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have city Hyderabad?",
+  "query": "SELECT name FROM doctor WHERE city = 'Hyderabad'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Hyderabad\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the maximum age of all patients?",
+  "query": "SELECT max(age) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      1,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose genre is Fantasy.",
+  "query": "SELECT title FROM book WHERE genre = 'Fantasy'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Fantasy\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which books have genre Fantasy?",
+  "query": "SELECT title FROM book WHERE genre = 'Fantasy'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       7,
+       false
+      ],
+      null
+     ],
+     "\"Fantasy\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show the name of the doctor with the highest experience.",
+  "query": "SELECT name FROM doctor ORDER BY experience DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the top 3 books with the largest pages?",
+  "query": "SELECT title FROM book ORDER BY pages DESC LIMIT 3",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 3,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Which authors have country Brazil?",
+  "query": "SELECT name FROM author WHERE country = 'Brazil'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Brazil\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the name of authors with birth year less than 1956.",
+  "query": "SELECT name FROM author WHERE birth_year < 1956",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     4,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     1956.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What are the names of the patients?",
+  "query": "SELECT name FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Count the number of authors.",
+  "query": "SELECT count(*) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many authors are there?",
+  "query": "SELECT count(*) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show the name and experience of all doctors.",
+  "query": "SELECT name, experience FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        5,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Show the title and pages of all books.",
+  "query": "SELECT title, pages FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of books sorted by pages.",
+  "query": "SELECT title FROM book ORDER BY pages ASC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the distinct countrys of authors.",
+  "query": "SELECT DISTINCT country FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    true,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Show the name of the patient with the highest age.",
+  "query": "SELECT name FROM patient ORDER BY age DESC LIMIT 1",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "desc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": 1,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of books with pages less than 470.",
+  "query": "SELECT title FROM book WHERE pages < 470",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     4,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     470.0,
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of books of the author Ana Rao.",
+  "query": "SELECT T1.title FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id WHERE T2.name = 'Ana Rao'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Ana Rao\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many authors have country Canada?",
+  "query": "SELECT count(*) FROM author WHERE country = 'Canada'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Canada\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the name of authors sorted by birth year.",
+  "query": "SELECT name FROM author ORDER BY birth_year ASC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have specialty Pediatrics?",
+  "query": "SELECT count(*) FROM doctor WHERE specialty = 'Pediatrics'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Pediatrics\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors practice in Boston?",
+  "query": "SELECT name FROM doctor WHERE city = 'Boston'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Boston\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors have specialty Pediatrics?",
+  "query": "SELECT name FROM doctor WHERE specialty = 'Pediatrics'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Pediatrics\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find authors with birth year between 1925 and 1956.",
+  "query": "SELECT name FROM author WHERE birth_year BETWEEN 1925 AND 1956",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     1,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     1925.0,
+     1956.0
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the name of doctors whose city is Hyderabad.",
+  "query": "SELECT name FROM doctor WHERE city = 'Hyderabad'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Hyderabad\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the total age of all patients?",
+  "query": "SELECT sum(age) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      4,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many authors are there for each country?",
+  "query": "SELECT country, count(*) FROM author GROUP BY country",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the minimum birth year of authors?",
+  "query": "SELECT min(birth_year) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      2,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find the doctors that have no patients.",
+  "query": "SELECT name FROM doctor WHERE doctor_id NOT IN (SELECT doctor_id FROM patient)",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     true,
+     8,
+     [
+      0,
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ],
+     {
+      "from": {
+       "table_units": [
+        [
+         "table_unit",
+         1
+        ]
+       ],
+       "conds": []
+      },
+      "select": [
+       false,
+       [
+        [
+         0,
+         [
+          0,
+          [
+           0,
+           9,
+           false
+          ],
+          null
+         ]
+        ]
+       ]
+      ],
+      "where": [],
+      "groupBy": [],
+      "having": [],
+      "orderBy": [],
+      "limit": null,
+      "intersect": null,
+      "union": null,
+      "except": null
+     },
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the maximum birth year of all authors?",
+  "query": "SELECT max(birth_year) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      1,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What are the names of the doctors?",
+  "query": "SELECT name FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the title of books of the author Arjun Shah.",
+  "query": "SELECT T1.title FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id WHERE T2.name = 'Arjun Shah'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       2,
+       false
+      ],
+      null
+     ],
+     "\"Arjun Shah\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have specialty Neurology?",
+  "query": "SELECT count(*) FROM doctor WHERE specialty = 'Neurology'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Neurology\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "List the name of all authors.",
+  "query": "SELECT name FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "What is the average age of patients?",
+  "query": "SELECT avg(age) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      5,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which doctors practice in Chennai?",
+  "query": "SELECT name FROM doctor WHERE city = 'Chennai'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Chennai\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find doctors with experience between 10 and 28.",
+  "query": "SELECT name FROM doctor WHERE experience BETWEEN 10 AND 28",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     1,
+     [
+      0,
+      [
+       0,
+       5,
+       false
+      ],
+      null
+     ],
+     10.0,
+     28.0
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "How many authors have country France?",
+  "query": "SELECT count(*) FROM author WHERE country = 'France'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"France\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors have city Boston?",
+  "query": "SELECT count(*) FROM doctor WHERE city = 'Boston'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       4,
+       false
+      ],
+      null
+     ],
+     "\"Boston\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the maximum pages of all books?",
+  "query": "SELECT max(pages) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      1,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Which citys have more than 2 doctors?",
+  "query": "SELECT city FROM doctor GROUP BY city HAVING count(*) > 2",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     4,
+     false
+    ]
+   ],
+   "having": [
+    [
+     false,
+     3,
+     [
+      0,
+      [
+       3,
+       0,
+       false
+      ],
+      null
+     ],
+     2.0,
+     null
+    ]
+   ],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many doctors are there for each specialty?",
+  "query": "SELECT specialty, count(*) FROM doctor GROUP BY specialty",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        3,
+        false
+       ],
+       null
+      ]
+     ],
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [
+    [
+     0,
+     3,
+     false
+    ]
+   ],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the title of books whose author has country Canada.",
+  "query": "SELECT T1.title FROM book AS T1 JOIN author AS T2 ON T1.author_id = T2.author_id WHERE T2.country = 'Canada'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ],
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": [
+     [
+      false,
+      2,
+      [
+       0,
+       [
+        0,
+        9,
+        false
+       ],
+       null
+      ],
+      [
+       0,
+       1,
+       false
+      ],
+      null
+     ]
+    ]
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        6,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Canada\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the name of patients sorted by age.",
+  "query": "SELECT name FROM patient ORDER BY age ASC",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [
+    "asc",
+    [
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ]
+    ]
+   ],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "List the distinct citys of doctors.",
+  "query": "SELECT DISTINCT city FROM doctor",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    true,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the minimum pages of books?",
+  "query": "SELECT min(pages) FROM book",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      2,
+      [
+       0,
+       [
+        0,
+        8,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "How many patients are there?",
+  "query": "SELECT count(*) FROM patient",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      3,
+      [
+       0,
+       [
+        0,
+        0,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "What is the total birth year of all authors?",
+  "query": "SELECT sum(birth_year) FROM author",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      4,
+      [
+       0,
+       [
+        0,
+        4,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "library",
+  "question": "Find the name of authors whose country is Canada.",
+  "query": "SELECT name FROM author WHERE country = 'Canada'",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      0
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        2,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     2,
+     [
+      0,
+      [
+       0,
+       3,
+       false
+      ],
+      null
+     ],
+     "\"Canada\"",
+     null
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ },
+ {
+  "db_id": "hospital",
+  "question": "Find patients with age between 22 and 43.",
+  "query": "SELECT name FROM patient WHERE age BETWEEN 22 AND 43",
+  "sql": {
+   "from": {
+    "table_units": [
+     [
+      "table_unit",
+      1
+     ]
+    ],
+    "conds": []
+   },
+   "select": [
+    false,
+    [
+     [
+      0,
+      [
+       0,
+       [
+        0,
+        7,
+        false
+       ],
+       null
+      ]
+     ]
+    ]
+   ],
+   "where": [
+    [
+     false,
+     1,
+     [
+      0,
+      [
+       0,
+       8,
+       false
+      ],
+      null
+     ],
+     22.0,
+     43.0
+    ]
+   ],
+   "groupBy": [],
+   "having": [],
+   "orderBy": [],
+   "limit": null,
+   "intersect": null,
+   "union": null,
+   "except": null
+  }
+ }
+]

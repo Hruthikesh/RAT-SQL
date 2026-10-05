@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ratsql-research"
+version = "1.0.0"
+description = "Research re-implementation of RAT-SQL: relation-aware schema encoding and linking for Text-to-SQL"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.4",
+    "transformers>=5.0",
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+    "networkx>=3.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+data = ["gdown>=5.0"]
+dev = ["pytest>=8.0", "nbformat>=5.9", "nbconvert>=7.0", "ipykernel>=6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 160

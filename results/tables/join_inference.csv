@@ -1,0 +1,11 @@
+model,variant,exact_match,execution_accuracy,sql_validity,queries_rewritten,n
+full,as decoded,0.6141,0.6373,0.9236,0,1034
+full,+ FK join inference,0.6277,0.6663,0.9855,156,1034
+vanilla,as decoded,0.3308,0.3143,0.5474,0,1034
+vanilla,+ FK join inference,0.3752,0.4894,0.94,530,1034
+no_linking,as decoded,0.4874,0.53,0.8801,0,1034
+no_linking,+ FK join inference,0.5087,0.5783,0.971,200,1034
+simple,as decoded,0.0957,0.0996,0.3172,0,1034
+simple,+ FK join inference,0.1044,0.206,0.9091,709,1034
+final,as decoded,0.6489,0.6692,0.9004,0,1034
+final,+ FK join inference,0.6567,0.6992,0.9642,169,1034

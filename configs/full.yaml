@@ -1,0 +1,17 @@
+# FULL mode: the final model trained with the largest budget that fits the hardware
+# (RTX 3050, 6 GB).  Same architecture as the controlled FULL model but with
+# BERT-medium (8 layers) and a longer schedule.  Evaluated on Spider dev and test.
+# (The paper's setting -- BERT-large, 8 RAT layers, ~90k steps -- does not fit.)
+inherit: small.yaml
+
+output_dir: experiments/full_model/final
+
+model:
+  encoder:
+    pretrained_model: google/bert_uncased_L-8_H-512_A-8   # BERT-medium, 8 layers, H=512, 41.1M params
+
+train:
+  epochs: 40
+  batch_size: 64
+  max_tokens: 16384
+  eval_every: 4

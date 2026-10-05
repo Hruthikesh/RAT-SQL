@@ -1,0 +1,21 @@
+# SMALL mode: the *controlled setting* used for baselines, ablations and data scaling
+# on a single 6 GB laptop GPU (RTX 3050).  Full Spider train (minus held-out
+# validation databases), BERT-small encoder, reduced training budget.
+inherit: base.yaml
+
+output_dir: experiments/full_model/rat_small
+
+model:
+  encoder:
+    pretrained_model: google/bert_uncased_L-4_H-512_A-8   # BERT-small, 4 layers, H=512, 28.5M params
+
+train:
+  epochs: 20
+  batch_size: 64
+  max_tokens: 20480          # batch_size * max BERT input length (fits 6 GB)
+  lr: 1.0e-3
+  bert_lr: 5.0e-5
+  warmup_ratio: 0.05
+  eval_every: 3
+  eval_batch_size: 64
+  log_every: 50

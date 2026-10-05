@@ -1,0 +1,100 @@
+{
+  "n": 2147,
+  "exact_match": 0.5934,
+  "grammar_validity": 0.9991,
+  "parse_validity": 0.9991,
+  "execution_accuracy": 0.6344,
+  "sql_validity": 0.8864,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 470,
+      "exact_match": 0.8213,
+      "execution_accuracy": 0.8383
+    },
+    "medium": {
+      "n": 857,
+      "exact_match": 0.6488,
+      "execution_accuracy": 0.6733
+    },
+    "hard": {
+      "n": 463,
+      "exact_match": 0.4816,
+      "execution_accuracy": 0.5464
+    },
+    "extra": {
+      "n": 357,
+      "exact_match": 0.3053,
+      "execution_accuracy": 0.3866
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.8629,
+      "rec": 0.8621,
+      "f1": 0.8625
+    },
+    "select(no AGG)": {
+      "acc": 0.8704,
+      "rec": 0.8696,
+      "f1": 0.87
+    },
+    "where": {
+      "acc": 0.7476,
+      "rec": 0.746,
+      "f1": 0.7468
+    },
+    "where(no OP)": {
+      "acc": 0.8206,
+      "rec": 0.8189,
+      "f1": 0.8197
+    },
+    "group(no Having)": {
+      "acc": 0.8034,
+      "rec": 0.8157,
+      "f1": 0.8095
+    },
+    "group": {
+      "acc": 0.7748,
+      "rec": 0.7867,
+      "f1": 0.7807
+    },
+    "order": {
+      "acc": 0.8016,
+      "rec": 0.8226,
+      "f1": 0.8119
+    },
+    "and/or": {
+      "acc": 0.9812,
+      "rec": 0.9863,
+      "f1": 0.9837
+    },
+    "IUEN": {
+      "acc": 0.481,
+      "rec": 0.4294,
+      "f1": 0.4537
+    },
+    "keywords": {
+      "acc": 0.8549,
+      "rec": 0.8525,
+      "f1": 0.8537
+    }
+  },
+  "decode_errors": {
+    "exceeded max_steps=250": 2
+  },
+  "split": "test",
+  "checkpoint": "C:\\Users\\LUCKYTHALLA\\Downloads\\RAT-SQL\\experiments\\full_model\\final\\best.pt",
+  "beam_size": 1,
+  "decode_seconds": 26.41,
+  "ms_per_example": 12.3,
+  "eval_seconds": 24.28,
+  "parameters": {
+    "input_encoder": 41110528,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 49677362,
+    "trainable": 49677362
+  }
+}

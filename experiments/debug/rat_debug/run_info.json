@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "input_encoder": 4369408,
+    "rat_encoder": 270848,
+    "decoder": 600370,
+    "value_encoder": 33536,
+    "total": 5274162,
+    "trainable": 5274162
+  },
+  "device": {
+    "python": "3.13.3",
+    "torch": "2.14.0+cu126",
+    "cuda_available": true,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpu_memory_gb": 6.0,
+    "cuda_version": "12.6"
+  },
+  "train_examples": 282,
+  "val_examples": 152,
+  "seed": 42
+}

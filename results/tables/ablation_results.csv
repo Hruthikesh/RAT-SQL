@@ -1,0 +1,12 @@
+ablation_id,experiment,description,exact_match,execution_accuracy,sql_validity,grammar_validity,delta_em,delta_em_ci95,delta_ex,delta_ex_ci95,parameters,train_minutes,inference_ms_per_example,best_epoch,epochs_run
+A,full,FULL: BERT + RAT + schema linking + grammar decoding,0.6141,0.6373,0.9236,1.0,0.0,–,0.0,–,37067826,51.8,22.98,20,20
+B,baseline_c_no_linking,Baseline C: schema-aware RAT without schema linking,0.4874,0.53,0.8801,0.9981,-12.7,"[-15.5, -10.0]",-10.7,"[-13.2, -8.3]",37067826,57.7,27.43,18,20
+C,ablation_c_no_ngram_linking,No n-gram (name) linking,0.5426,0.5571,0.8956,1.0,-7.2,"[-9.9, -4.4]",-8.0,"[-10.6, -5.4]",37067826,40.9,10.26,18,20
+D,ablation_d_no_value_linking,No value (cell) linking,0.5832,0.6054,0.8859,1.0,-3.1,"[-5.6, -0.8]",-3.2,"[-5.6, -0.8]",37067826,37.2,10.15,18,20
+E,ablation_e_no_rat,No relation-aware transformer (BERT output fed to decoder),0.3182,0.3221,0.5464,1.0,-29.6,"[-32.8, -26.3]",-31.5,"[-34.7, -28.2]",33897010,31.4,9.89,18,20
+F,baseline_b_vanilla_transformer,Baseline B: vanilla transformer (no relation-aware attention),0.3308,0.3143,0.5474,1.0,-28.3,"[-31.3, -25.4]",-32.3,"[-35.4, -29.2]",37056562,53.4,23.63,20,20
+G,ablation_g_no_foreign_keys,No foreign-key relations,0.6015,0.5996,0.911,1.0,-1.3,"[-3.9, +1.5]",-3.8,"[-6.2, -1.2]",37067826,36.6,10.66,18,20
+H,ablation_h_no_grammar,No grammar constraints (unmasked action softmax),0.2089,0.2166,0.2621,0.2708,-40.5,"[-43.7, -37.4]",-42.1,"[-45.2, -38.9]",37067826,36.6,7.26,18,20
+I,ablation_i_lstm_encoder,BiLSTM instead of BERT (with RAT + linking),0.499,0.528,0.8559,0.999,-11.5,"[-14.4, -8.7]",-10.9,"[-13.6, -8.1]",25377586,27.8,11.18,18,20
+J,scaling_10pct,Reduced training data (10%),0.3453,0.3965,0.8337,0.999,-26.9,"[-29.8, -23.9]",-24.1,"[-27.0, -21.0]",37067826,11.5,10.36,63,63
+K,ablation_k_coarse_relations,Coarse relation vocabulary (6 undirected relation types),0.5629,0.5793,0.8665,1.0,-5.1,"[-7.6, -2.6]",-5.8,"[-8.4, -3.2]",37058354,36.8,9.75,15,20

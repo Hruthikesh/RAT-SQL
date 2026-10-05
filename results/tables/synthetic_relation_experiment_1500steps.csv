@@ -1,0 +1,5 @@
+task,attention,mean_test_accuracy,std_test_accuracy,seeds,chance,parameters
+one_hop,relation-aware,1.0,0.0,3,0.125,72584
+one_hop,vanilla,0.2929687599341075,0.003091376939001076,3,0.125,72200
+two_hop,relation-aware,0.7505696614583334,0.02180564421401525,3,0.125,72584
+two_hop,vanilla,0.2846950888633728,0.002754133248235838,3,0.125,72200

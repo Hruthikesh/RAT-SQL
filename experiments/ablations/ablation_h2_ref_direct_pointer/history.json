@@ -1,0 +1,84 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 26.884999271406645,
+    "train_step_acc": 0.7803775696813637,
+    "epoch_seconds": 159.69085788726807,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 5,
+    "lr": 0.0009838056680161944,
+    "train_seconds_cum": 159.7
+  },
+  {
+    "epoch": 2,
+    "train_loss": 14.693543108649877,
+    "train_step_acc": 0.8714205359691793,
+    "epoch_seconds": 154.31853079795837,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "lr": 0.000946516087790326,
+    "train_seconds_cum": 314.0
+  },
+  {
+    "epoch": 3,
+    "train_loss": 10.620718731799563,
+    "train_step_acc": 0.911006277753124,
+    "epoch_seconds": 163.53710269927979,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "val_loss": 8.72334210413427,
+    "val_em": 0.2982,
+    "val_ex": 0.3483,
+    "val_grammar_valid": 1.0,
+    "val_exec_valid": 0.9261,
+    "val_decode_seconds": 4.83812559999933,
+    "lr": 0.0008928190922650757,
+    "train_seconds_cum": 477.6
+  },
+  {
+    "epoch": 4,
+    "train_loss": 7.850485655003124,
+    "train_step_acc": 0.9365893230145652,
+    "epoch_seconds": 140.27295327186584,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "lr": 0.0008397613466865544,
+    "train_seconds_cum": 617.8
+  },
+  {
+    "epoch": 5,
+    "train_loss": 6.201520713731862,
+    "train_step_acc": 0.9499560472485012,
+    "epoch_seconds": 150.78622722625732,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "lr": 0.0007862774344768805,
+    "train_seconds_cum": 768.6
+  },
+  {
+    "epoch": 6,
+    "train_loss": 4.926030233336819,
+    "train_step_acc": 0.960295543388856,
+    "epoch_seconds": 167.50937867164612,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "val_loss": 7.125175779287293,
+    "val_em": 0.4565,
+    "val_ex": 0.5092,
+    "val_grammar_valid": 1.0,
+    "val_exec_valid": 0.9367,
+    "val_decode_seconds": 6.153728600002069,
+    "lr": 0.000733645855529512,
+    "train_seconds_cum": 936.1
+  },
+  {
+    "epoch": 7,
+    "train_loss": 4.230568045917629,
+    "train_step_acc": 0.9660079878119444,
+    "epoch_seconds": 148.61229801177979,
+    "nonfinite_loss_batches": 0,
+    "amp_skipped_steps": 0,
+    "lr": 0.0006795226933731089,
+    "train_seconds_cum": 1084.8
+  }
+]

@@ -1,0 +1,10 @@
+2026-09-30 02:06:02 waiting for external GPU job (TuneLab) to finish, max 2 h
+2026-09-30 02:14:10 resuming after 8.1 min; external job still running: False
+2026-09-30 10:00:20 scripts/run_ablation.py ... exit=0
+2026-09-30 10:00:20 QUEUE EXIT
+2026-09-30 11:45:38 scripts/train.py --config configs/full.yaml ... exit=0
+2026-09-30 11:45:38 FINAL EXIT
+2026-10-01 02:06:00 session 3: resuming remaining jobs
+2026-10-01 02:51:02 scripts/train.py --config configs/small.yaml --set ... exit=0
+2026-10-01 02:51:03 SEED43 EXIT
+2026-10-01 03:12:05 STOPPED by user request: ablation_h2_ref_direct_pointer interrupted during epoch 8 (last.pt = end of epoch 7); ablation_h2_no_grammar_direct_pointer and final-model beam search not started

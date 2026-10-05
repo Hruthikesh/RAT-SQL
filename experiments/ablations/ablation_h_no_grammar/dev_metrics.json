@@ -1,0 +1,101 @@
+{
+  "n": 1034,
+  "exact_match": 0.2089,
+  "grammar_validity": 0.2708,
+  "parse_validity": 0.2708,
+  "execution_accuracy": 0.2166,
+  "sql_validity": 0.2621,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 248,
+      "exact_match": 0.4234,
+      "execution_accuracy": 0.4032
+    },
+    "medium": {
+      "n": 446,
+      "exact_match": 0.1883,
+      "execution_accuracy": 0.2085
+    },
+    "hard": {
+      "n": 174,
+      "exact_match": 0.1092,
+      "execution_accuracy": 0.1264
+    },
+    "extra": {
+      "n": 166,
+      "exact_match": 0.0482,
+      "execution_accuracy": 0.0542
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.9321,
+      "rec": 0.2524,
+      "f1": 0.3973
+    },
+    "select(no AGG)": {
+      "acc": 0.9393,
+      "rec": 0.2544,
+      "f1": 0.4003
+    },
+    "where": {
+      "acc": 0.8503,
+      "rec": 0.2615,
+      "f1": 0.4
+    },
+    "where(no OP)": {
+      "acc": 0.9048,
+      "rec": 0.2782,
+      "f1": 0.4256
+    },
+    "group(no Having)": {
+      "acc": 0.9429,
+      "rec": 0.1218,
+      "f1": 0.2157
+    },
+    "group": {
+      "acc": 0.9429,
+      "rec": 0.1218,
+      "f1": 0.2157
+    },
+    "order": {
+      "acc": 0.9091,
+      "rec": 0.1299,
+      "f1": 0.2273
+    },
+    "and/or": {
+      "acc": 0.9293,
+      "rec": 0.9979,
+      "f1": 0.9624
+    },
+    "IUEN": {
+      "acc": 0.6364,
+      "rec": 0.0921,
+      "f1": 0.1609
+    },
+    "keywords": {
+      "acc": 0.9154,
+      "rec": 0.212,
+      "f1": 0.3442
+    }
+  },
+  "decode_errors": {
+    "expected a column action for column, got table": 662,
+    "expected a table action for table, got column": 92
+  },
+  "split": "dev",
+  "checkpoint": "C:\\Users\\LUCKYTHALLA\\Downloads\\RAT-SQL\\experiments\\ablations\\ablation_h_no_grammar\\best.pt",
+  "beam_size": 1,
+  "decode_seconds": 7.5,
+  "ms_per_example": 7.26,
+  "eval_seconds": 2.84,
+  "parameters": {
+    "input_encoder": 28500992,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 37067826,
+    "trainable": 37067826
+  }
+}

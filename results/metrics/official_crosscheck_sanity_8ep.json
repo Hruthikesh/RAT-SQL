@@ -1,0 +1,142 @@
+{
+  "predictions": "experiments/sanity/small_8ep/dev_predictions.jsonl",
+  "n": 1034,
+  "official_exact_match": 0.5096711798839458,
+  "ours_exact_match": 0.5096711798839458,
+  "em_agreement": 1.0,
+  "em_disagreements": 0,
+  "official_execution_accuracy": 0.5502901353965184,
+  "ours_execution_accuracy": 0.5425531914893617,
+  "exec_agreement": 0.9845261121856866,
+  "exec_disagreements": 16,
+  "disagreement_examples": [
+    {
+      "id": "dev_00058",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat' OR T3.pettype  =  'dog'",
+      "pred": "SELECT DISTINCT T1.Fname FROM Student AS T1 JOIN Has_Pet AS T2 JOIN Pets AS T3 ON T1.StuID = T2.StuID AND T1.StuID = T2.StuID WHERE T3.PetType = 'cat' OR T3.PetType = 'dog'"
+    },
+    {
+      "id": "dev_00076",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT DISTINCT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid",
+      "pred": "SELECT DISTINCT T1.Fname, T1.Age FROM Student AS T1 JOIN Has_Pet AS T2 JOIN Student AS T3 ON T1.StuID = T2.StuID AND T1.StuID = T2.StuID"
+    },
+    {
+      "id": "dev_00153",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "select distinct year from cars_data where weight between 3000 and 4000;",
+      "pred": "SELECT Year FROM cars_data WHERE Weight > 3000 INTERSECT SELECT Year FROM cars_data WHERE Weight < 4000"
+    },
+    {
+      "id": "dev_00443",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT loser_name) FROM matches",
+      "pred": "SELECT count(DISTINCT winner_name) FROM matches"
+    },
+    {
+      "id": "dev_00485",
+      "kind": "exec",
+      "official": 0,
+      "ours": true,
+      "gold": "SELECT count(DISTINCT winner_name) FROM matches WHERE tourney_name  =  'WTA Championships' AND winner_hand  =  'L'",
+      "pred": "SELECT count(DISTINCT winner_hand) FROM matches WHERE tourney_name = 'WTA Championships'"
+    },
+    {
+      "id": "dev_00520",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT degree_summary_name) FROM Degree_Programs",
+      "pred": "SELECT count(DISTINCT degree_program_id) FROM Degree_Programs"
+    },
+    {
+      "id": "dev_00545",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.course_name FROM Courses AS T1 JOIN Student_Enrolment_Courses AS T2 ON T1.course_id  =  T2.course_id",
+      "pred": "SELECT T1.course_name FROM Courses AS T1 JOIN Student_Enrolment_Courses AS T2 ON T1.course_id = T2.course_id"
+    },
+    {
+      "id": "dev_00546",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.course_name FROM Courses AS T1 JOIN Student_Enrolment_Courses AS T2 ON T1.course_id  =  T2.course_id",
+      "pred": "SELECT T1.course_name FROM Courses AS T1 JOIN Student_Enrolment_Courses AS T2 ON T1.course_id = T2.course_id"
+    },
+    {
+      "id": "dev_00687",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(*) FROM area_code_state",
+      "pred": "SELECT count(DISTINCT state) FROM AREA_CODE_STATE"
+    },
+    {
+      "id": "dev_00734",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT GovernmentForm) FROM country WHERE Continent  =  \"Africa\"",
+      "pred": "SELECT count(*) FROM country WHERE Continent = 'Africa'"
+    },
+    {
+      "id": "dev_00752",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'English' OR T2.Language = 'Dutch'"
+    },
+    {
+      "id": "dev_00753",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" OR T2.Language  =  \"Dutch\"",
+      "pred": "SELECT T1.Region FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language = 'Dutch' OR T2.Language = 'English'"
+    },
+    {
+      "id": "dev_00780",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT DISTINCT CountryCode FROM countrylanguage WHERE LANGUAGE != \"English\"",
+      "pred": "SELECT T1.Code FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code = T2.CountryCode WHERE T2.Language != 'English'"
+    },
+    {
+      "id": "dev_00866",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT grade FROM Highschooler",
+      "pred": "SELECT DISTINCT grade FROM Highschooler"
+    },
+    {
+      "id": "dev_00966",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Dogs"
+    },
+    {
+      "id": "dev_00967",
+      "kind": "exec",
+      "official": 1,
+      "ours": false,
+      "gold": "SELECT count(DISTINCT dog_id) FROM Treatments",
+      "pred": "SELECT count(*) FROM Dogs"
+    }
+  ]
+}

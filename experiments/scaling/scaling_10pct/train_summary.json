@@ -1,0 +1,16 @@
+{
+  "best_metric": 0.3483,
+  "best_epoch": 63,
+  "epochs_run": 63,
+  "steps": 1441,
+  "train_seconds": 690.5,
+  "parameters": {
+    "input_encoder": 28500992,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 37067826,
+    "trainable": 37067826
+  },
+  "train_examples": 828
+}

@@ -1,0 +1,100 @@
+{
+  "n": 1034,
+  "exact_match": 0.3453,
+  "grammar_validity": 0.999,
+  "parse_validity": 0.999,
+  "execution_accuracy": 0.3965,
+  "sql_validity": 0.8337,
+  "gold_exec_ok": 1.0,
+  "by_hardness": {
+    "easy": {
+      "n": 248,
+      "exact_match": 0.5847,
+      "execution_accuracy": 0.6169
+    },
+    "medium": {
+      "n": 446,
+      "exact_match": 0.3184,
+      "execution_accuracy": 0.3879
+    },
+    "hard": {
+      "n": 174,
+      "exact_match": 0.2701,
+      "execution_accuracy": 0.3046
+    },
+    "extra": {
+      "n": 166,
+      "exact_match": 0.1386,
+      "execution_accuracy": 0.1867
+    }
+  },
+  "components": {
+    "select": {
+      "acc": 0.7144,
+      "rec": 0.7137,
+      "f1": 0.7141
+    },
+    "select(no AGG)": {
+      "acc": 0.7628,
+      "rec": 0.7621,
+      "f1": 0.7625
+    },
+    "where": {
+      "acc": 0.5042,
+      "rec": 0.5063,
+      "f1": 0.5052
+    },
+    "where(no OP)": {
+      "acc": 0.625,
+      "rec": 0.6276,
+      "f1": 0.6263
+    },
+    "group(no Having)": {
+      "acc": 0.6667,
+      "rec": 0.679,
+      "f1": 0.6728
+    },
+    "group": {
+      "acc": 0.6014,
+      "rec": 0.6125,
+      "f1": 0.6069
+    },
+    "order": {
+      "acc": 0.5185,
+      "rec": 0.5455,
+      "f1": 0.5316
+    },
+    "and/or": {
+      "acc": 0.9561,
+      "rec": 0.9628,
+      "f1": 0.9594
+    },
+    "IUEN": {
+      "acc": 0.1296,
+      "rec": 0.0921,
+      "f1": 0.1077
+    },
+    "keywords": {
+      "acc": 0.6621,
+      "rec": 0.6705,
+      "f1": 0.6663
+    }
+  },
+  "decode_errors": {
+    "exceeded max_steps=250": 1
+  },
+  "split": "dev",
+  "checkpoint": "C:\\Users\\LUCKYTHALLA\\Downloads\\RAT-SQL\\experiments\\scaling\\scaling_10pct\\best.pt",
+  "beam_size": 1,
+  "decode_seconds": 10.71,
+  "ms_per_example": 10.36,
+  "eval_seconds": 6.29,
+  "parameters": {
+    "input_encoder": 28500992,
+    "rat_encoder": 3302144,
+    "decoder": 5132082,
+    "value_encoder": 132608,
+    "total": 37067826,
+    "trainable": 37067826
+  }
+}
